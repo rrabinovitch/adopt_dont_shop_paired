@@ -13,7 +13,8 @@ RSpec.describe "Delete shelter", type: :feature do
 
     expect(current_path).to eq("/shelters")
     expect(page).to_not have_content('Test Shelter')
-    
+
+  
   end
   
 end

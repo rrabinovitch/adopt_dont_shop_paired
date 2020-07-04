@@ -215,6 +215,7 @@
           1,
           1,
           1,
+          1,
           null,
           null,
           null
@@ -223,6 +224,35 @@
       "/Users/garrett/Documents/Turing/Module_2/adopt_dont_shop_2005/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/garrett/Documents/Turing/Module_2/adopt_dont_shop_2005/spec/features/pets/pet_show_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
           null
         ]
       },
@@ -243,6 +273,7 @@
           null,
           1,
           1,
+          null,
           null,
           null,
           null,
@@ -372,6 +403,42 @@
           null
         ]
       },
+      "/Users/garrett/Documents/Turing/Module_2/adopt_dont_shop_2005/spec/features/shelters/pet_index_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/garrett/Documents/Turing/Module_2/adopt_dont_shop_2005/app/models/shelter.rb": {
         "lines": [
           1,
@@ -389,6 +456,66 @@
         ]
       },
       "/Users/garrett/Documents/Turing/Module_2/adopt_dont_shop_2005/app/models/pet.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/garrett/Documents/Turing/Module_2/adopt_dont_shop_2005/app/controllers/pets_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/garrett/Documents/Turing/Module_2/adopt_dont_shop_2005/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
@@ -439,22 +566,20 @@
           null,
           null,
           1,
+          1,
+          1,
+          null,
+          null,
+          1,
           null,
           1,
           1,
           null,
           null,
-          null
-        ]
-      },
-      "/Users/garrett/Documents/Turing/Module_2/adopt_dont_shop_2005/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
           null
         ]
       }
     },
-    "timestamp": 1593821757
+    "timestamp": 1593894547
   }
 }
