@@ -1,0 +1,12 @@
+<h2>Pets Needing a Home</h2>
+
+<% @pets.each do |pet| %>
+
+  <%= image_tag("#{pet.image}") %>
+  <p> Name: <%= pet.name %></p>
+  <p> Age: <%= pet.approximate_age %></p>
+  <p> Sex: <%= pet.sex %></p>
+  <p> Shelter Name: <%= pet.shelter.name %></p>
+<% end %>
+
+<%= link_to "New Shelter", "/shelters/new" %>
