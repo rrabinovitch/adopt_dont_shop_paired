@@ -1,20 +1,23 @@
-<%= link_to "Shelter Index", "/shelters" %>
-</br>
-<%= link_to "Pet Index", "/pets" %>
-</br>
+<p><%= link_to "Shelter Index", "/shelters" %>
+<br>
+<%= link_to "Pet Index", "/pets" %></p>
+<hr/>
 <h2>Pets Needing a Home</h2>
-
 <% @pets.each do |pet| %>
+  <hr/>
   <%= image_tag(pet.image, alt: "pet picture", method: :get, class: 'pet-image') %>
   <p> Name: <%= link_to "#{pet.name}", "/pets/#{pet.id}" %> </p>
   <p> Description: <%= pet.description %> </p>
   <p> Aproximate Age: <%= pet.approximate_age %> </p>
   <p> Sex: <%= pet.sex %> </p>
   <p> Adopt Status: <%= pet.status %> </p>
-  <%= link_to "Edit Information", "/pets/#{pet.id}/edit" %>
-  </br>
-  <%= link_to "Delete Pet", "/pets/#{pet.id}", method: :delete %>
-  </br>
+  <p> Shelter: <%= link_to "#{pet.shelter.name}", "/shelters/#{pet.shelter.id}/pets" %> </p>
+  
+  <p><%= link_to "Edit Information", "/pets/#{pet.id}/edit" %></p>
+  <p><%= link_to "Delete Pet", "/pets/#{pet.id}", method: :delete %></p>
+  
 <% end %>
+<hr/>
+<p><%= link_to "New Shelter", "/shelters/new" %></p>
 
-<%= link_to "New Shelter", "/shelters/new" %>
+

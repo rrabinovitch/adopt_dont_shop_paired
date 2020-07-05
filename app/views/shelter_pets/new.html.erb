@@ -1,24 +1,19 @@
-<%= link_to "Shelter Index", "/shelters" %>
-</br>
-<%= link_to "Pet Index", "/pets" %>
-</br>
+<p><%= link_to "Shelter Index", "/shelters" %>
+<br>
+<%= link_to "Pet Index", "/pets" %></p>
+<hr/>
 <h2> Add a New Pet </h2>
-
+<hr/>
 <%= form_tag "/shelters/#{@shelter_id}/pets" do %>
-  <%= label_tag :image %>
-  <%= text_field_tag :image %>
-  <br/>
-  <%= label_tag :name %>
-  <%= text_field_tag :name %>
-  <br/>
-  <%= label_tag :description %>
-  <%= text_field_tag :description %>
-  <br/>
-  <%= label_tag :approximate_age %>
-  <%= text_field_tag :approximate_age %>
-  <br/>
-  <%= label_tag :sex %>
-  <%= text_field_tag :sex %>
-  <br/>
-  <%= submit_tag "Create Pet" %>
+  <p><%= label_tag :image %>
+  <%= text_field_tag :image %></p>
+  <p><%= label_tag :name %>
+  <%= text_field_tag :name %></p>
+  <p><%= label_tag :description %>
+  <%= text_field_tag :description %></p>
+  <p><%= label_tag :approximate_age %>
+  <%= text_field_tag :approximate_age %></p>
+  <p><%= label_tag :sex %>
+  <%= text_field_tag :sex %></p>
+  <p><%= submit_tag "Create Pet" %></p>
 <% end %>

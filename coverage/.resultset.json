@@ -575,11 +575,59 @@
           null
         ]
       },
-      "/Users/garrett/Documents/Turing/Module_2/adopt_dont_shop_2005/app/models/shelter.rb": {
+      "/Users/garrett/Documents/Turing/Module_2/adopt_dont_shop_2005/spec/models/pet_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/garrett/Documents/Turing/Module_2/adopt_dont_shop_2005/app/models/pet.rb": {
         "lines": [
           1,
           1,
           null,
+          1,
+          7,
           null,
           null
         ]
@@ -591,10 +639,25 @@
           null
         ]
       },
-      "/Users/garrett/Documents/Turing/Module_2/adopt_dont_shop_2005/app/models/pet.rb": {
+      "/Users/garrett/Documents/Turing/Module_2/adopt_dont_shop_2005/spec/models/shelter_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/garrett/Documents/Turing/Module_2/adopt_dont_shop_2005/app/models/shelter.rb": {
         "lines": [
           1,
           1,
+          null,
+          null,
           null
         ]
       },
@@ -680,6 +743,7 @@
           null,
           1,
           4,
+          4,
           null,
           null,
           1,
@@ -728,6 +792,6 @@
         ]
       }
     },
-    "timestamp": 1593968527
+    "timestamp": 1593983928
   }
 }
