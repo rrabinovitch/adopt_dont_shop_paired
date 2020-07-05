@@ -1,15 +1,12 @@
-<%= link_to "Shelter Index", "/shelters" %>
-</br>
-<%= link_to "Pet Index", "/pets" %>
-</br>
+<p><%= link_to "Shelter Index", "/shelters" %>
+<br>
+<%= link_to "Pet Index", "/pets" %></p>
+<hr/>
 <%= image_tag(@pet.image, alt: "pet picture", method: :get, class: 'pet-image') %>
-
-
 <p> Name: <%= @pet.name %> </p>
 <p> Description: <%= @pet.description %> </p>
 <p> Aproximate Age: <%= @pet.approximate_age %> </p>
 <p> Sex: <%= @pet.sex %> </p>
 <p> Adoption Status: <%= @pet.status %> </p>
-<%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %>
-<br/>
-<%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %>
+<p><%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %></p>
+<p><%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %></p>

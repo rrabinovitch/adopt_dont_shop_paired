@@ -1,11 +1,11 @@
-<%= link_to "Shelter Index", "/shelters" %>
+<p><%= link_to "Shelter Index", "/shelters" %>
 <br>
-<%= link_to "Pet Index", "/pets" %>
-<br>
+<%= link_to "Pet Index", "/pets" %></p>
+<hr/>
 <h2> <%= "#{@shelter.name}'s Available Pets" %> </h2>
-
 <% @pets.each do |pet| %>
   <% if pet.shelter_id == @shelter.id %>
+  <hr/>
     <%= image_tag(pet.image, alt: "pet picture", method: :get, class: 'pet-image') %>
     <p> Name: <%= link_to "#{pet.name}", "/pets/#{pet.id}" %> </p>
     <p> Description: <%= pet.description %> </p>
@@ -15,6 +15,6 @@
     <p> Adopt Status: <%= pet.status %> </p>
   <% end %>
 <% end %>
-
-<%= link_to "Create Pet", "/shelters/#{@shelter.id}/pets/new" %>
+<hr/>
+<p><%= link_to "Create Pet", "/shelters/#{@shelter.id}/pets/new" %></p>
 
