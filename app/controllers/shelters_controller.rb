@@ -31,6 +31,7 @@ class SheltersController < ApplicationController
   
   def show
     @shelter = Shelter.find(params[:id])
+    @pets = @shelter.pets
   end
   
   def destroy
@@ -40,7 +41,7 @@ class SheltersController < ApplicationController
   
   def pets_index
     @shelter = Shelter.find(params[:shelter_id])
-    @pets = @shelter.pets
+    @pets = @shelter.pets.sort_by_status
   end
 
   private
