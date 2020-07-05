@@ -15,7 +15,7 @@ RSpec.describe "New shelter", type: :feature do
     fill_in 'State', with: 'CO'
     fill_in 'Zip', with: '81443'
     click_on 'Create Shelter'
-# last sql
+
     expect(current_path).to eq("/shelters")
     expect(page).to have_content('Test Shelter')
   end

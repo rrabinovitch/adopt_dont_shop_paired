@@ -23,6 +23,6 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content("Aproximate Age: 3")
     expect(page).to have_content("Sex: Female")
     expect(page).to have_content("Adoption Status: Adoptable")
-    # save_and_open_page
   end
+    
 end

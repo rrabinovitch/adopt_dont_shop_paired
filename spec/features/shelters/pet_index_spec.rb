@@ -29,4 +29,23 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content("Sex: Female")
     
   end
+  
+  it "I can see the number of pets each shelter has in 'shelters/:id/pets'" do
+    
+    shelter = Shelter.create(name: "Shelter A")
+
+    test_pet = Pet.create(
+              image: "http://www.gsgsrescue.org/assets/files/dogs/2020/06/IMG_1639_1.jpg",
+              name: "Bailey",
+              approximate_age: "3",
+              sex: "Female",
+              shelter_id: shelter.id,
+              description: "A loving 3 year old pup looking for a partner to play fetch with!",
+              status: "Adoptable"
+              )
+              
+      visit "/shelters/#{shelter.id}"
+
+      expect(page).to have_content("Available Pets: 1")
+  end
 end
