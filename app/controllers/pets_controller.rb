@@ -3,6 +3,10 @@ class PetsController < ApplicationController
     @pets = Pet.all
 
   end
+  
+  def show
+    @pet = Pet.find(params[:id])
+  end
 
   def new
     
@@ -31,9 +35,7 @@ class PetsController < ApplicationController
   #   redirect_to "/shelters/#{params[:id]}"
   # end
   #
-  # def show
-  #   @shelter = Shelter.find(params[:id])
-  # end
+
   #
   # def destroy
   #   Shelter.destroy(params[:id])
