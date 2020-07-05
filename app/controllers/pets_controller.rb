@@ -11,41 +11,26 @@ class PetsController < ApplicationController
   def new
     
   end
-  #
-  # def create
-  #   shelter = Shelter.new({
-  #             name: params[:name],
-  #             address: params[:address],
-  #             city: params[:city],
-  #             state: params[:state],
-  #             zip: params[:zip]
-  #             })
-  #   shelter.save
-  #   redirect_to '/shelters'
-  # end
-  #
-  # def edit
-  #   # binding.pry
-  #   @shelter = Shelter.find(params[:id])
-  # end
-  #
-  # def update
-  #   shelter = Shelter.find(params[:id])
-  #   shelter.update(shelter_params)
-  #   redirect_to "/shelters/#{params[:id]}"
-  # end
-  #
 
-  #
-  # def destroy
-  #   Shelter.destroy(params[:id])
-  #   redirect_to "/shelters"
-  # end
-  #
-  # private
-  #
-  # def shelter_params
-  #   params.permit(:name, :address, :city, :state, :zip)
-  # end
+  def edit
+    @pet = Pet.find(params[:id])
+    # @shelter = Shelter.find(params[:id])
+  end
+  
+  def update
+    pet = Pet.find(params[:id])
+    pet.update(pet_params)
+    redirect_to "/pets/#{params[:id]}"
+  end
+  
+  def destroy
+    Pet.destroy(params[:id])
+    redirect_to "/pets/"
+  end
+  
+  private
 
+  def pet_params
+    params.permit(:image, :name, :description, :approximate_age, :sex, :status)
+  end
 end
