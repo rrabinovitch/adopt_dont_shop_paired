@@ -4,11 +4,20 @@ RSpec.describe "As a visitor", type: :feature do
 
   it "When I visit '/shelters/:id' then I see that shelters's info" do
     test_shelter = Shelter.create!(name: "Test Shelter", address: "114 Test Address", city: "Test City", state: "CO", zip: "80202")
+
     visit "/shelters/#{test_shelter.id}"
 
-    click_link "Pets Page"
+    expect(page).to have_content("#{test_shelter.name}")
+    expect(page).to have_content("Address: #{test_shelter.address}")
+    expect(page).to have_content("City: #{test_shelter.city}")
+    expect(page).to have_content("State: #{test_shelter.state}")
+    expect(page).to have_content("Zip: #{test_shelter.zip}")
 
-    expect(current_path).to eq("/shelters/#{test_shelter.id}/pets")
+    # visit "/shelters/#{test_shelter.id}"
+    #
+    # click_link "Pets Page"
+    #
+    # expect(current_path).to eq("/shelters/#{test_shelter.id}/pets")
   end
 
   it "when I visit '/shelters/:id' then I see a list of reviews for that shelter" do
