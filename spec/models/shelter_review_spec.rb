@@ -7,7 +7,7 @@ RSpec.describe ShelterReview, type: :model do
     it { should validate_presence_of :content }
   end
 
-  # describe 'relationships' do
-  #
-  # end
+  describe 'relationships' do
+    it { should belong_to :shelter }
+  end
 end
