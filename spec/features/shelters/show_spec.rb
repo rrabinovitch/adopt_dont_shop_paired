@@ -13,8 +13,7 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content("State: #{test_shelter.state}")
     expect(page).to have_content("Zip: #{test_shelter.zip}")
 
-    # visit "/shelters/#{test_shelter.id}"
-    #
+    # ADD BELOW CODE TO SHELTER PETS INDEX PAGE TEST
     # click_link "Pets Page"
     #
     # expect(current_path).to eq("/shelters/#{test_shelter.id}/pets")
