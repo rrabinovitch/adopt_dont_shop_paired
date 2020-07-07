@@ -5,7 +5,7 @@ class SheltersController < ApplicationController
 
   def new
   end
-  
+
   def create
     shelter = Shelter.new({
               name: params[:name],
@@ -17,28 +17,27 @@ class SheltersController < ApplicationController
     shelter.save
     redirect_to '/shelters'
   end
-  
+
   def edit
-    # binding.pry
     @shelter = Shelter.find(params[:id])
   end
-  
+
   def update
     shelter = Shelter.find(params[:id])
     shelter.update(shelter_params)
     redirect_to "/shelters/#{params[:id]}"
   end
-  
+
   def show
     @shelter = Shelter.find(params[:id])
-    @pets = @shelter.pets
+    @shelter_reviews = @shelter.shelter_reviews
   end
-  
+
   def destroy
     Shelter.destroy(params[:id])
     redirect_to "/shelters"
   end
-  
+
   def pets_index
     @shelter = Shelter.find(params[:shelter_id])
     @pets = @shelter.pets.sort_by_status
