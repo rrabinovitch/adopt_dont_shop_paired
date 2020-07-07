@@ -34,8 +34,6 @@ class SheltersController < ApplicationController
     # ^ consider removing bc we dont reference pets on the show page
     @shelter_reviews = @shelter.shelter_reviews
     binding.pry
-    # @shelter_reviews = ShelterReview.where("shelter_id=#{params[:id]}")
-    # binding.pry
   end
 
   def destroy
