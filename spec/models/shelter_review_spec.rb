@@ -12,6 +12,6 @@ RSpec.describe ShelterReview, type: :model do
   end
 
   # describe 'method' do
-  # 
+  #
   # end
 end
