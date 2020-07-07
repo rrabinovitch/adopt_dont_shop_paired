@@ -30,10 +30,7 @@ class SheltersController < ApplicationController
 
   def show
     @shelter = Shelter.find(params[:id])
-    @pets = @shelter.pets
-    # ^ consider removing bc we dont reference pets on the show page
     @shelter_reviews = @shelter.shelter_reviews
-    binding.pry
   end
 
   def destroy
