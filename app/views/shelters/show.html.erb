@@ -11,6 +11,10 @@
 <p>State: <%= @shelter.state %></p>
 <p>Zip: <%= @shelter.zip %></p>
 
+<p><%= link_to "Update Shelter", "/shelters/#{@shelter.id}/edit" %></p>
+<p><%= link_to "Delete Shelter", "/shelters/#{@shelter.id}", method: :delete%></p>
+<p><%= link_to "New Review", "/shelters/#{@shelter.id}/reviews/new"%></p>
+
 <h3><%= @shelter.name %> Reviews</h3>
 <% @shelter_reviews.each do |shelter_review| %>
   <h4><%= shelter_review.title %></h4>
@@ -19,5 +23,4 @@
   <%= image_tag(shelter_review.picture, alt: "Photo for '#{shelter_review.title}' review", size: "300") %>
 <% end %>
 
-<p><%= link_to "Update Shelter", "/shelters/#{@shelter.id}/edit" %></p>
-<p><%= link_to "Delete Shelter", "/shelters/#{@shelter.id}", method: :delete%></p>
+
