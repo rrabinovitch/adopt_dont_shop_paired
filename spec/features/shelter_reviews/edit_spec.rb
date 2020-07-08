@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Edit a shelter", type: :feature do
+RSpec.describe "Edit a shelter review", type: :feature do
 
   it "I can edit a review from a shelter show page" do
     test_shelter = Shelter.create!(name: "Test Shelter", address: "114 Test Address", city: "Test City", state: "CO", zip: "80202")

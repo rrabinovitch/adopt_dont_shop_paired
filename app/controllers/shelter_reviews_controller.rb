@@ -38,6 +38,11 @@ class ShelterReviewsController < ApplicationController
       render :edit
     end
   end
+  
+  def destroy
+    ShelterReview.destroy(params[:review_id])
+    redirect_to "/shelters/#{params[:shelter_id]}"
+  end
 
   private
   def shelter_review_params
