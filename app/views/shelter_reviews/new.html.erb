@@ -4,7 +4,7 @@
 <hr/>
 <h2> Add a New Review for <%= @shelter.name %> </h2>
 <hr/>
-<%= form_tag "/shelters/#{@shelter_id}" do %>
+<%= form_tag "/shelters/#{@shelter.id}/reviews/new" do %>
 
   <p><%= label_tag :title %>
   <%= text_field_tag :title %></p>
