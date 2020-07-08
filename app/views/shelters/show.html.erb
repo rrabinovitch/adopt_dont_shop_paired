@@ -20,8 +20,8 @@
   <h4><%= shelter_review.title %></h4>
   <p>Rating: <%= shelter_review.rating %>/5</p>
   <p><%= shelter_review.content %></p>
-  <%= image_tag(shelter_review.picture, alt: "Photo for '#{shelter_review.title}' review", size: "300") %>
+  <% if !shelter_review.picture.empty? %>
+    <%= image_tag(shelter_review.picture, alt: "Photo for '#{shelter_review.title}' review", size: "300") %>
+  <% end %>
   <p><%= link_to "Edit Review", "/shelters/#{@shelter.id}/reviews/#{shelter_review.id}/edit"%></p>
 <% end %>
-
-

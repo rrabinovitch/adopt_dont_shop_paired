@@ -59,25 +59,13 @@ RSpec.describe "Shelter review creation", type: :feature do
   it "I see a flash message when I try to create a new shelter review but fail to enter input for all the required form fields" do
     visit "/shelters/#{@shelter.id}/reviews/new"
 
-    title = "Ok shelter"
-    rating = 3
-
-    expect(current_path).to eq("/shelters/#{@shelter.id}/reviews/new")
-
-    fill_in 'Title', with: title
-    fill_in 'Rating', with: rating
+    fill_in 'Title', with: "Ok shelter"
+    fill_in 'Rating', with: 3
 
     click_on "Submit Review"
 
     expect(page).to have_content("Unsuccessful review submission: title, rating, and content needed in order to submit a review.")
-    expect(page).to have_link("New Review")
-
-    click_on "New Review"
 
     expect(current_path).to eq("/shelters/#{@shelter.id}/reviews/new")
-
-# I see a flash message indicating that I need to fill in a title, rating, and content in order to submit a shelter review
-# And I'm returned to the new form to create a new review
   end
-
 end
