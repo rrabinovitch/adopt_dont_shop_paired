@@ -56,8 +56,24 @@ RSpec.describe "Shelter review creation", type: :feature do
     expect(page).to have_xpath("//img[@src='https://image.flaticon.com/icons/png/512/3/3901.png']")
   end
 
-  # it "I see a flash message when I try to create a new shelter review but fail to enter input for all the required form fields" do
-  #
-  # end
+  it "I see a flash message when I try to create a new shelter review but fail to enter input for all the required form fields" do
+    visit "/shelters/#{@shelter.id}/reviews/new"
+
+    title = "Ok shelter"
+    rating = 3
+
+    expect(current_path).to eq("/shelters/#{@shelter.id}/reviews/new")
+
+    fill_in 'Title', with: title
+    fill_in 'Rating', with: rating
+
+    click_on "Submit Review"
+
+    expect(page).to have_content("Shelter review not created: Required information missing.")
+    expect(page).to have_link("New Review")
+
+# I see a flash message indicating that I need to fill in a title, rating, and content in order to submit a shelter review
+# And I'm returned to the new form to create a new review
+  end
 
 end
