@@ -21,6 +21,7 @@
   <p>Rating: <%= shelter_review.rating %>/5</p>
   <p><%= shelter_review.content %></p>
   <%= image_tag(shelter_review.picture, alt: "Photo for '#{shelter_review.title}' review", size: "300") %>
+  <p><%= link_to "Edit Review", "/shelters/#{@shelter.id}/reviews/#{shelter_review.id}/edit"%></p>
 <% end %>
 
 
