@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "As a visitor", type: :feature do
-  
+
   it 'I can edit shelter information from the Show page' do
-    
     test_shelter = Shelter.create!(name: "Test Shelter", address: "114 Test Address", city: "Test City", state: "CO", zip: "80202")
     visit "/shelters/#{test_shelter.id}"
 
@@ -24,11 +23,9 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content('Boulder')
     expect(page).to have_content('CO')
     expect(page).to have_content('81443')
-    
   end
-  
+
   it "I get an 'Edit' link for each shelter in '/shelters'" do
-    
     shelter = Shelter.create(name: "Shelter A")
 
     test_pet = Pet.create(
@@ -40,11 +37,10 @@ RSpec.describe "As a visitor", type: :feature do
               description: "A loving 3 year old pup looking for a partner to play fetch with!",
               status: "Adoptable"
               )
-              
+
       visit '/shelters'
       click_link "Edit"
       expect(current_path).to eq("/shelters/#{shelter.id}/edit")
-      
   end
-  
+
 end

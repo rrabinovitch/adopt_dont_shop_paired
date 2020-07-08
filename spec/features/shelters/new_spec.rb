@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "New shelter", type: :feature do
-  
   it 'I can create a new shelter' do
     visit '/shelters'
 
@@ -19,5 +18,4 @@ RSpec.describe "New shelter", type: :feature do
     expect(current_path).to eq("/shelters")
     expect(page).to have_content('Test Shelter')
   end
-  
 end
