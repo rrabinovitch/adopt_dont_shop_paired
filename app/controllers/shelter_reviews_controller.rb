@@ -28,9 +28,15 @@ class ShelterReviewsController < ApplicationController
   end
 
   def update
+    @shelter = Shelter.find(params[:shelter_id])
     @shelter_review = ShelterReview.find(params[:review_id])
     @shelter_review.update(shelter_review_params)
-    redirect_to "/shelters/#{params[:shelter_id]}"
+    if @shelter_review.save
+      redirect_to "/shelters/#{params[:shelter_id]}"
+    else
+      flash[:notice] = "Unsuccessful review submission: title, rating, and content needed in order to submit a review."
+      render :edit
+    end
   end
 
   private
