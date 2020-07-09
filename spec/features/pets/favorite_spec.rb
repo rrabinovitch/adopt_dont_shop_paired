@@ -7,7 +7,7 @@ RSpec.describe "Favorite indicator", type: :feature do
     
     visit "/"
     favorites = 0
-    
+    #Added line for testing merge
     within("navbar") do
       expect(page).to have_content("Favorites - #{favorites}")
     end
