@@ -330,6 +330,23 @@
           null
         ]
       },
+      "/Users/garrett/Documents/Turing/Module_2/adopt_dont_shop_paired/spec/features/pets/favorite_spec.rb": {
+        "lines": [
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/garrett/Documents/Turing/Module_2/adopt_dont_shop_paired/spec/features/pets/index_spec.rb": {
         "lines": [
           1,
@@ -1006,7 +1023,7 @@
         "lines": [
           1,
           1,
-          9,
+          10,
           null,
           null,
           1,
@@ -1140,6 +1157,6 @@
         ]
       }
     },
-    "timestamp": 1594244427
+    "timestamp": 1594260949
   }
 }
