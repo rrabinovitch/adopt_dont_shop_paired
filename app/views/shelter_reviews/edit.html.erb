@@ -1,7 +1,4 @@
-<p><%= link_to "Shelter Index", "/shelters" %>
-<br>
-<%= link_to "Pet Index", "/pets" %></p>
-<hr/>
+
 <h1><%= "Edit Review For #{@shelter.name}" %></h1>
 <hr/>
 <%= form_tag "/shelters/#{@shelter.id}/reviews/#{@shelter_review.id}/edit", method: :patch do %>

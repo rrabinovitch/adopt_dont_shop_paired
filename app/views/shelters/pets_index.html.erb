@@ -1,7 +1,4 @@
-<p><%= link_to "Shelter Index", "/shelters" %>
-<br>
-<%= link_to "Pet Index", "/pets" %></p>
-<hr/>
+
 <h2> <%= "#{@shelter.name}'s Available Pets" %> </h2>
 <% @pets.each do |pet| %>
   <% if pet.shelter_id == @shelter.id %>
