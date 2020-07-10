@@ -12,7 +12,7 @@
     <navbar>
       <p> <%= link_to "Shelter Index", "/shelters" %>
       <%= link_to "Pet Index", "/pets" %>
-      <%= link_to "Favorites - 0", "/favorites" %> </p>
+      <%= link_to "Favorites - #{session[:favorites].values.sum}", "/favorites" %> </p>
     </navbar>
 
     <% flash.each do |type, message| %>
