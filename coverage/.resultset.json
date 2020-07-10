@@ -227,12 +227,62 @@
           1,
           1,
           1,
+          1,
           null
         ]
       },
       "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/spec/features/pets/delete_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -324,25 +374,6 @@
           1,
           1,
           1,
-          null,
-          null
-        ]
-      },
-      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/spec/features/pets/favorite_spec.rb": {
-        "lines": [
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
           null,
           null
         ]
@@ -972,6 +1003,78 @@
           null
         ]
       },
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/controllers/shelters_controller.rb": {
+        "lines": [
+          1,
+          1,
+          11,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          15,
+          15,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          4,
+          4,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/controllers/favorites_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/controllers/pets_controller.rb": {
         "lines": [
           1,
@@ -1008,69 +1111,6 @@
           null,
           1,
           2,
-          null,
-          null
-        ]
-      },
-      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/controllers/shelters_controller.rb": {
-        "lines": [
-          1,
-          1,
-          10,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          15,
-          15,
-          null,
-          null,
-          1,
-          2,
-          2,
-          null,
-          null,
-          1,
-          4,
-          4,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
           null,
           null
         ]
@@ -1151,6 +1191,6 @@
         ]
       }
     },
-    "timestamp": 1594326629
+    "timestamp": 1594356319
   }
 }
