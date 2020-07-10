@@ -10,15 +10,17 @@
 
   <body>
     <navbar>
-      <p> <%= link_to "Shelter Index", "/shelters" %>
-      <%= link_to "Pet Index", "/pets" %>
-      <%= link_to "Favorites - 0"%> </p>
+      <ul>
+        <li><%= link_to "Shelter Index", "/shelters" %></li>
+        <li><%= link_to "Pet Index", "/pets" %></li>
+        <li><%= link_to "Favorites - 0"%></li>
+      </ul>
     </navbar>
 
     <% flash.each do |type, message| %>
       <p><%= message %></p>
     <% end %>
-    
+
     <%= yield %>
   </body>
 </html>
