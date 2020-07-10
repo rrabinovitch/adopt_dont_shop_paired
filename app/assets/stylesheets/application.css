@@ -13,9 +13,13 @@
  *= require_tree .
  *= require_self
  */
- 
+
  body {background-color: #c1432e;}
- 
+
+ navbar li {
+     display: inline-block;
+   }
+
  hr {
     display: block;
     height: 1px;
@@ -24,14 +28,14 @@
     margin: 1em 0;
     padding: 0;
   }
- 
+
  p {
    text-align: left;
    padding: 1px;
    color: #ce9e62;
    font-size: 30px;
   }
- 
+
  h2 {
    text-align: left;
    padding: 1px;
