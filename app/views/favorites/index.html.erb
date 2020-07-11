@@ -1,1 +1,12 @@
 <h1>Favorited Pets</h1>
+<p><%= @favorites %></p>
+<% @pets.each do |pet| %>
+
+<%  if @favorites.map(&:to_i).include?(pet.id) %>
+<h2>   Name: <%= p pet.name %> </h2>
+<%=    image_tag(pet.image, alt: "pet picture", method: :get, class: 'pet-image') %>
+<%  end %>
+<% end %>
+
+  
+
