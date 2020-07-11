@@ -7,10 +7,12 @@ class Favorites
 
   def total
     @favorite_pets.count
-    # if @favorite_pets.nil?
-    #   0
-    # else
-    #   @favorite_pets.count
-    # end
   end
+  
+  def favorite_array
+    @favorite_pets.map do |pet|
+      pet
+    end
+  end
+  
 end
