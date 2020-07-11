@@ -1,18 +1,22 @@
 
 require 'rails_helper'
 
-RSpec.describe "Favorite indicator and index", type: :feature do
-  it "The navigation bar has a favorite indiciator" do
+RSpec.describe "Favorite's Index Page", type: :feature do
+  it "The index page displays favorited pets" do
     shelter = Shelter.create(name: "Primary Shelter", address: "123 Maple Ave.", city: "Denver", state: "CO", zip: "80438")
     pet1 = Pet.create(name: "Bonnie", image: "http://www.gsgsrescue.org/assets/files/dogs/2020/06/IMG_1639_1.jpg", approximate_age: "13", sex: "Female", shelter_id: shelter.id, status: "Adoptable")
-    pet2 = Pet.create(name: "Bonnie", image: "http://clipart-library.com/img/1678223.jpg", approximate_age: "2", sex: "Male", shelter_id: shelter.id, status: "Adoptable")
-    # @favorites = Favorites.new(["#{pet1.id}", "#{pet2.id}"])
 
-    visit "/favorites"
+    visit "/pets/#{pet1.id}"
     
-    expect(page)
+    click_on 'Favorite'
     
+    within("navbar") do
+      click_on "Favorites - 1"
+    end
     
+    expect(current_path).to eq('/favorites')
+    expect(page).to have_content(pet1.name)
+    expect(page).to have_xpath("//img[@src='#{pet1.image}']")
   end
 end
 
