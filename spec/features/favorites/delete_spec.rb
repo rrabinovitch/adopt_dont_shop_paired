@@ -10,20 +10,20 @@ RSpec.describe "Pet show page", type: :feature do
     
     expect(page).to have_content('Favorite')
     
-    click_on 'Favorite'
+    click_button 'Favorite'
     visit current_path
-  
-    expect(page).to_not have_content('Favorite')
-    expect(page).to have_content('Remove Pet From Favorites')
-    
-    click_on 'Remove Pet From Favorites'
+    # expect(page).to_not have_content('Favorite')
+    expect(page).to have_button('Remove Pet From Favorites')
+        save_and_open_page
+    click_button 'Remove Pet From Favorites'
     
     within("navbar") do
-      click_on "Favorites - 1"
+      click_link "Favorites - 0"
     end
     
-    expect(current_path).to eq('/favorites')
-    expect(page).to have_content(pet1.name)
-    expect(page).to have_xpath("//img[@src='#{pet1.image}']")
+    expect(current_path).to eq("/favorites")
+    expect(page).to_not have_content(pet1.name)
+    expect(page).to_not have_xpath("//img[@src='#{pet1.image}']")
+
   end
 end
