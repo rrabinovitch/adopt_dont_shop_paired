@@ -1,12 +1,14 @@
 class FavoritesController < ApplicationController
   def index
-
+    @pets = Pet.all
+    @favorites = favorite_pets.favorite_array.map(&:to_i)
   end
 
   def update
     pet = Pet.find(params[:pet_id])
     pet_id_str = pet.id.to_s
     session[:favorites] ||= Array.new
+
     if session[:favorites].include?(pet.id)
       flash[:alert] = "#{pet.name} has already been favorited."
     else
