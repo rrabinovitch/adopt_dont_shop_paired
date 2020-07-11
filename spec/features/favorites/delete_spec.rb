@@ -14,7 +14,7 @@ RSpec.describe "Pet show page", type: :feature do
     visit current_path
     # expect(page).to_not have_content('Favorite')
     expect(page).to have_button('Remove Pet From Favorites')
-        save_and_open_page
+  
     click_button 'Remove Pet From Favorites'
     
     within("navbar") do
