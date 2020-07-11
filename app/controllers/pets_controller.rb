@@ -6,6 +6,7 @@ class PetsController < ApplicationController
   
   def show
     @pet = Pet.find(params[:id])
+    @favorites = favorite_pets.favorite_array.map(&:to_i)
   end
 
   def new
