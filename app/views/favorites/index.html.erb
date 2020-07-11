@@ -3,7 +3,7 @@
 <% @pets.each do |pet| %>
 
 <%  if @favorites.map(&:to_i).include?(pet.id) %>
-<h1>   Name: <%= p pet.name %> </h1>
+<h1>   Name: <%= pet.name %> </h1>
 <%=    image_tag(pet.image, alt: "pet picture", method: :get, class: 'pet-image') %>
 <%  end %>
 
