@@ -1,7 +1,8 @@
 class FavoritesController < ApplicationController
   def index
-    @pets = Pet.all
-    @favorites = favorite_pets.favorite_array.map(&:to_i)
+    @favorites = Pet.find(favorite_pets.favorite_pets)
+    # @pets = Pet.all
+    # @favorites = favorite_pets.favorite_array.map(&:to_i)
   end
 
   def update
@@ -18,23 +19,23 @@ class FavoritesController < ApplicationController
 
     redirect_to "/pets/#{pet.id}"
   end
-  
+
   def destroy
     pet = Pet.find(params[:pet_id])
     session[:favorites].delete(pet.id.to_s)
     flash[:notice] = "#{pet.name} has been removed to your favorites list."
-    
+
     if URI(request.referer).path == "/favorites"
       redirect_to "/favorites"
     else URI(request.referer).path == "/pets/#{pet.id}"
       redirect_to "/pets/#{pet.id}"
     end
   end
-  
+
   def destroy_all
     session[:favorites] = []
     flash[:notice] = "All pets have been removed from the favorites list"
     redirect_to '/favorites'
   end
-  
+
 end

@@ -1,7 +1,7 @@
 class AdoptionApplicationsController < ApplicationController
   def new
     @favorite_pets = Pet.find(favorite_pets.favorite_pets)
-    binding.pry
+    # binding.pry
     # adoptable = they've been favorited and should be available to select in the application form
   end
 
