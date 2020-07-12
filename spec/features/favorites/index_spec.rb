@@ -1,4 +1,3 @@
-
 require 'rails_helper'
 
 RSpec.describe "Favorite's Index Page", type: :feature do
@@ -44,6 +43,20 @@ RSpec.describe "Favorite's Index Page", type: :feature do
   it "No favorited pets" do
     visit "/favorites"
     expect(page).to have_content("No pets to see here. Explore pets here and select some of your favorites!")
+  end
+
+  it "text" do
+    shelter = Shelter.create(name: "Primary Shelter", address: "123 Maple Ave.", city: "Denver", state: "CO", zip: "80438")
+    pet1 = Pet.create(name: "Bonnie", image: "http://www.gsgsrescue.org/assets/files/dogs/2020/06/IMG_1639_1.jpg", approximate_age: "13", sex: "Female", shelter_id: shelter.id, status: "Adoptable")
+
+    visit "/pets/#{pet1.id}"
+    click_on 'Favorite'
+
+    visit "/favorites"
+
+    click_on 'Apply to adopt your favorite pets'
+
+    expect(current_path).to eq("/applications/new")
   end
 end
 
