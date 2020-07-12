@@ -58,7 +58,7 @@ RSpec.describe "Favorite indicator and index", type: :feature do
     end
   end
 
-  it "The favorite indicator links to the favorites index page" do
+  it "The favorite indicator links to the favorites index page from anywhere on site" do
     visit "/"
 
     within("navbar") do
@@ -68,7 +68,7 @@ RSpec.describe "Favorite indicator and index", type: :feature do
     expect(current_path).to eq('/favorites')
   end
 
-  it "The favorite indicator links to the favorites index page" do
+  it "The favorite indicator links to the favorites index page from favorites page" do
     visit "/favorites"
 
     within("navbar") do
