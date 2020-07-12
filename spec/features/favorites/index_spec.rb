@@ -45,7 +45,7 @@ RSpec.describe "Favorite's Index Page", type: :feature do
     expect(page).to have_content("No pets to see here. Explore pets here and select some of your favorites!")
   end
 
-  it "text" do
+  it "Link to apply to adopt favorited pets" do
     shelter = Shelter.create(name: "Primary Shelter", address: "123 Maple Ave.", city: "Denver", state: "CO", zip: "80438")
     pet1 = Pet.create(name: "Bonnie", image: "http://www.gsgsrescue.org/assets/files/dogs/2020/06/IMG_1639_1.jpg", approximate_age: "13", sex: "Female", shelter_id: shelter.id, status: "Adoptable")
 
