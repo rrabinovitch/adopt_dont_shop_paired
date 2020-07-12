@@ -30,4 +30,11 @@ class FavoritesController < ApplicationController
       redirect_to "/pets/#{pet.id}"
     end
   end
+  
+  def destroy_all
+    session[:favorites] = []
+    flash[:notice] = "All pets have been removed from the favorites list"
+    redirect_to '/favorites'
+  end
+  
 end
