@@ -26,7 +26,7 @@ RSpec.describe "New adoption application", type: :feature do
     fill_in :phone_number, with: "253-555-1843"
     fill_in :description, with: "I love animals and I want more."
 
-    click_on 'Submit application'
+    click_on 'Submit Application'
 
     expect(page).to have_content("Your adoption application has been submitted!")
 

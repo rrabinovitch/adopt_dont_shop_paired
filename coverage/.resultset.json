@@ -234,6 +234,9 @@
           1,
           1,
           1,
+          null,
+          1,
+          1,
           null
         ]
       },
@@ -243,13 +246,11 @@
           null
         ]
       },
-      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/models/adoption_application.rb": {
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/models/shelter.rb": {
         "lines": [
           1,
           1,
           1,
-          1,
-          null,
           null
         ]
       },
@@ -257,108 +258,6 @@
         "lines": [
           1,
           1,
-          null
-        ]
-      },
-      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/spec/models/favorites_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/models/favorites.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/spec/models/pet_adoption_applications_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          2,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/models/pet_adoption_application.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/spec/models/pet_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          2,
-          2,
-          2,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
           null
         ]
       },
@@ -370,59 +269,151 @@
           1,
           null,
           1,
-          1,
+          0,
           null,
           null
         ]
       },
-      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/spec/models/shelter_review_spec.rb": {
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/controllers/pets_controller.rb": {
         "lines": [
           1,
+          1,
+          0,
           null,
-          1,
-          1,
-          2,
-          2,
-          2,
           null,
           null,
           1,
-          2,
+          4,
+          4,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
           null,
           null
         ]
       },
-      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/models/shelter_review.rb": {
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
+          null,
           1,
+          null,
+          null,
+          1,
+          11,
           null,
           null
         ]
       },
-      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/spec/models/shelter_spec.rb": {
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/models/favorites.rb": {
         "lines": [
+          1,
           1,
           null,
           1,
+          6,
+          null,
+          null,
           1,
-          2,
-          2,
+          5,
+          null,
+          null,
+          1,
+          5,
+          6,
+          null,
           null,
           null,
           null
         ]
       },
-      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/models/shelter.rb": {
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/controllers/favorites_controller.rb": {
         "lines": [
           1,
           1,
           1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null,
+          2,
+          0,
+          null,
+          2,
+          2,
+          null,
+          null,
+          2,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/controllers/adoption_applications_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1594577909
+    "timestamp": 1594591657
   }
 }
