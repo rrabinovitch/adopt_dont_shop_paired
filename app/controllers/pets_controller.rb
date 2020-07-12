@@ -1,12 +1,15 @@
 class PetsController < ApplicationController
   def index
     @pets = Pet.all.sort_by_status
-
   end
   
   def show
     @pet = Pet.find(params[:id])
-    @favorites = favorite_pets.favorite_array.map(&:to_i)
+    if session[:favorites] != nil
+      @favorites = session[:favorites]
+    else
+      @favorites = []
+    end
   end
 
   def new

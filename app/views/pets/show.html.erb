@@ -6,11 +6,11 @@
 <p> Sex: <%= @pet.sex %> </p>
 <p> Adoption Status: <%= @pet.status %> </p>
 
-<%  if @favorites.map(&:to_i).include?(@pet.id) %>
-<p><%= button_to "Remove Pet From Favorites", "/favorites/#{@pet.id}", method: :delete %></p>
+<% if @favorites.include?(@pet.id.to_s) %>
+  <p><%= button_to "Remove Pet From Favorites", "/favorites/#{@pet.id}", method: :delete %></p>
 <%  else %>
-<p><%= button_to "Favorite", "/favorites/#{@pet.id}", method: :patch %></p>
-<%  end %>
+  <p><%= button_to "Favorite", "/favorites/#{@pet.id}", method: :patch %></p>
+<% end %>
 
 <p><%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %></p>
 <p><%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %></p>
