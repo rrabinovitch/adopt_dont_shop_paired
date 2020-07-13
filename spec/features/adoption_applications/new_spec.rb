@@ -15,23 +15,26 @@ RSpec.describe "New adoption application", type: :feature do
     visit "/favorites"
 
     click_on 'Apply to adopt your favorite pets'
-
     # expect page to have checklist with all favorited pets
+    expect(page).to have_content("Bonnie")
+    expect(page).to have_content("George")
     # tell page to select bonnie
+    select("#{pet1.name}")
+
     fill_in :name, with: "Ruthie R"
     fill_in :address, with: "1245 Turing Ave"
     fill_in :city, with: "Denver"
     fill_in :state, with: "CO"
     fill_in :zip, with: "80250"
     fill_in :phone_number, with: "253-555-1843"
-    fill_in :description, with: "I love animals and I want more."
+    fill_in :description, with: "I love animals and I want them all."
 
     click_on 'Submit Application'
 
     expect(page).to have_content("Your adoption application has been submitted!")
 
     expect(current_path).to eq("/favorites")
-    expect(page).to_not have_content("George")
+    expect(page).to_not have_content("Bonnie")
   end
 
   it "Incomplete application" do
