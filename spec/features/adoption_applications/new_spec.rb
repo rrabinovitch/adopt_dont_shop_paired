@@ -15,10 +15,12 @@ RSpec.describe "New adoption application", type: :feature do
     visit "/favorites"
 
     click_on 'Apply to adopt your favorite pets'
-    # expect page to have checklist with all favorited pets
+
+    expect(current_path).to eq("/adoption_applications/new")
+
     expect(page).to have_content("Bonnie")
     expect(page).to have_content("George")
-    # tell page to select bonnie
+
     select("#{pet1.name}")
 
     fill_in :name, with: "Ruthie R"
@@ -38,6 +40,22 @@ RSpec.describe "New adoption application", type: :feature do
   end
 
   it "Incomplete application" do
+    shelter = Shelter.create(name: "Primary Shelter", address: "123 Maple Ave.", city: "Denver", state: "CO", zip: "80438")
+    pet1 = Pet.create(name: "Bonnie", image: "http://www.gsgsrescue.org/assets/files/dogs/2020/06/IMG_1639_1.jpg", approximate_age: "13", sex: "Female", shelter_id: shelter.id, status: "Adoptable")
 
+    visit "/pets/#{pet1.id}"
+    click_on 'Favorite'
+
+    visit "/adoption_applications/new"
+
+    select("#{pet1.name}")
+
+    fill_in :name, with: "Ruthie R"
+
+    click_on 'Submit Application'
+
+    expect(page).to have_content("Unsuccessful application submission: please fill in all application fields.")
+
+    expect(current_path).to eq("/adoption_applications/new")
   end
 end

@@ -5,7 +5,8 @@ class ShelterReviewsController < ApplicationController
 
   def create
     @shelter = Shelter.find(params[:shelter_id])
-    @shelter_review = ShelterReview.new(shelter_review_params)
+    @shelter_review = ShelterReview.create(shelter_review_params)
+
     if @shelter_review.save
       redirect_to "/shelters/#{params[:shelter_id]}"
     else
