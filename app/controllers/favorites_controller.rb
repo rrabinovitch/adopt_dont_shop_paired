@@ -1,7 +1,7 @@
 class FavoritesController < ApplicationController
   def index
     @pets = Pet.all
-    @favorites = favorite_pets.favorite_array.map(&:to_i)
+    @favorites = Pet.find(favorite_pets.favorite_pets)
   end
 
   def update
