@@ -2,14 +2,11 @@
 <% if @favorites.empty? %>
   <h1>No pets to see here. Explore pets <%= link_to "here", "/pets" %> and select some of your favorites!</h1>
 <% else %>
-<%= button_to "Apply to adopt your favorite pets", "/adoption_applications/new", method: :get %> <br>
-<%= button_to "Remove All Pets From Favorites", "/favorites", method: :delete %>
+  <%= button_to "Apply to adopt your favorite pets", "/adoption_applications/new", method: :get %> <br>
+  <%= button_to "Remove All Pets From Favorites", "/favorites", method: :delete %>
   <% @favorites.each do |favorite| %>
-    <h1>   Name: <%= favorite.name %> </h1>
-    <%=    image_tag(favorite.image, alt: "pet picture", method: :get, class: 'pet-image') %>
+    <h1> Name: <%= favorite.name %> </h1>
+    <%= image_tag(favorite.image, alt: "pet picture", method: :get, class: 'pet-image') %>
     <p> <%= button_to "Remove Pet From Favorites", "/favorites/#{favorite.id}", method: :delete %></p>
   <%  end %>
 <%  end %>
-
-  
-
