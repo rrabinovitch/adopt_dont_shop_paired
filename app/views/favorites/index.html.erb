@@ -1,5 +1,4 @@
 <h2>Favorited Pets</h2>
-<p> <%= button_to "Remove All Pets From Favorites", "/favorites", method: :delete %></p>
 <% if @favorites.empty? %>
   <h1>No pets to see here. Explore pets <%= link_to "here", "/pets" %> and select some of your favorites!</h1>
 <% else %>
