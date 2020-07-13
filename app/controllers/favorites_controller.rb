@@ -2,6 +2,7 @@ class FavoritesController < ApplicationController
   def index
     @pets = Pet.all
     @favorites = Pet.find(favorite_pets.favorite_pets)
+    binding.pry
   end
 
   def update

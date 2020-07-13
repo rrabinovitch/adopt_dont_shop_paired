@@ -10,3 +10,6 @@
     <p> <%= button_to "Remove Pet From Favorites", "/favorites/#{favorite.id}", method: :delete %></p>
   <%  end %>
 <%  end %>
+
+
+PetAdoptionApplication.select(:pet_id).having("quantity > 1")
