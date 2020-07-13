@@ -2,7 +2,7 @@ class PetsController < ApplicationController
   def index
     @pets = Pet.all.sort_by_status
   end
-  
+   
   def show
     @pet = Pet.find(params[:id])
     if session[:favorites] != nil

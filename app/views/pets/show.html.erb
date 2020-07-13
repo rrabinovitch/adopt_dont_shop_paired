@@ -8,7 +8,7 @@
 
 <% if @favorites.include?(@pet.id.to_s) %>
   <p><%= button_to "Remove Pet From Favorites", "/favorites/#{@pet.id}", method: :delete %></p>
-<%  else %>
+<% else %>
   <p><%= button_to "Favorite", "/favorites/#{@pet.id}", method: :patch %></p>
 <% end %>
 

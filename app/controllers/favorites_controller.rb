@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
   def index
     @pets = Pet.all
     @favorites = Pet.find(favorite_pets.favorite_pets)
-  end
+  end 
 
   def update
     pet = Pet.find(params[:pet_id])
