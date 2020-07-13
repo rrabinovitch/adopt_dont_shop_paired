@@ -1,0 +1,6 @@
+<h2>Applications to Adop t<%= @pet.name %>:</h2>
+<ul>
+  <% @adoption_applications.each do |application| %>
+    <li><%= link_to "#{application.name}", "/adoption_applications/#{application.id}" %></li>
+  <% end %>
+</ul>
