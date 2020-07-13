@@ -234,12 +234,43 @@
           1,
           1,
           1,
+          null,
+          1,
+          1,
           null
         ]
       },
       "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/spec/features/favorites/add_favorite_pet_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -297,13 +328,11 @@
           1,
           1,
           null,
-          null,
           null
         ]
       },
       "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/spec/features/favorites/index_spec.rb": {
         "lines": [
-          null,
           1,
           null,
           1,
@@ -349,6 +378,19 @@
           1,
           1,
           1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
           1,
           null,
           null,
@@ -1039,6 +1081,45 @@
           null
         ]
       },
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/spec/models/adoption_applications_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/models/adoption_application.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/spec/models/favorites_spec.rb": {
         "lines": [
           1,
@@ -1059,19 +1140,39 @@
           1,
           null,
           1,
-          78,
+          89,
           null,
           null,
           1,
-          78,
+          89,
           null,
           null,
           1,
-          27,
-          9,
+          36,
+          18,
           null,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/spec/models/pet_adoption_applications_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/models/pet_adoption_application.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           null
         ]
       },
@@ -1081,6 +1182,8 @@
           null,
           1,
           1,
+          2,
+          2,
           2,
           null,
           null,
@@ -1123,17 +1226,12 @@
         "lines": [
           1,
           1,
+          1,
+          1,
           null,
           1,
           10,
           null,
-          null
-        ]
-      },
-      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
           null
         ]
       },
@@ -1150,10 +1248,6 @@
           null,
           1,
           2,
-          null,
-          null,
-          null,
-          null,
           null,
           null
         ]
@@ -1197,8 +1291,8 @@
           null,
           null,
           1,
-          17,
-          17,
+          23,
+          23,
           null,
           null,
           1,
@@ -1240,7 +1334,7 @@
           null,
           null,
           1,
-          104,
+          126,
           null,
           null
         ]
@@ -1249,23 +1343,23 @@
         "lines": [
           1,
           1,
-          10,
-          10,
+          13,
+          13,
           null,
           null,
           1,
-          5,
-          5,
-          5,
+          8,
+          8,
+          8,
           null,
-          5,
+          8,
           0,
           null,
-          5,
-          5,
+          8,
+          8,
           null,
           null,
-          5,
+          8,
           null,
           null,
           1,
@@ -1285,6 +1379,36 @@
           1,
           1,
           null,
+          null,
+          null
+        ]
+      },
+      "/Users/ruthie_turing/turing/2module/projects/adopt_dont_shop_paired/app/controllers/adoption_applications_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
           null,
           null
         ]
@@ -1421,6 +1545,6 @@
         ]
       }
     },
-    "timestamp": 1594572617
+    "timestamp": 1594599601
   }
 }

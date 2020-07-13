@@ -11,7 +11,7 @@ RSpec.describe "Pet show page", type: :feature do
 
     click_button 'Favorite'
     visit current_path
-  
+
     click_button 'Remove Pet From Favorites'
 
     within("navbar") do
@@ -49,6 +49,5 @@ RSpec.describe "Pet show page", type: :feature do
     expect(page).to have_content("All pets have been removed from the favorites list")
     expect(page).to_not have_content(pet1.name)
     expect(page).to_not have_xpath("//img[@src='#{pet1.image}']")
-
   end
 end
