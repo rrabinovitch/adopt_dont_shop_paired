@@ -5,17 +5,17 @@ class AdoptionApplicationsController < ApplicationController
 
   def create
     @adoption_application = AdoptionApplication.create(adoption_application_params)
-    if @adoption_application.save
-      @selected_pet_ids = params[:pet_ids]
+    @selected_pet_ids = params[:pet_ids]
+    if @selected_pet_ids.nil? || !@adoption_application.save
+      flash[:notice] = "Unsuccessful application submission: please fill in all application fields."
+      redirect_to "/adoption_applications/new"
+    elsif @adoption_application.save
       @selected_pet_ids.each do |pet_id|
         session[:favorites].delete(pet_id)
         PetAdoptionApplication.create(adoption_application_id: @adoption_application.id, pet_id: pet_id)
       end
       flash[:notice] = "Your adoption application has been submitted!"
       redirect_to '/favorites'
-    else
-      flash[:notice] = "Unsuccessful application submission: please fill in all application fields."
-      redirect_to "/adoption_applications/new"
     end
   end
 
