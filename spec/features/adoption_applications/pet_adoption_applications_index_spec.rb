@@ -27,12 +27,11 @@ RSpec.describe 'Pet adoption applications index page', type: :feature do
 
     visit "/pets/#{pet1.id}/adoption_applications"
 
-    within("#adoption-applicants") do
-      expect(page).to have_content("Applicants:")
+    within ".adoption-applicants" do
       expect(page).to have_content(adoption_application1.name)
-      expect(page).to have_xpath("//adoption_applications/#{adoption_application1}")
+      expect(page).to have_link(nil, href: "/adoption_applications/#{adoption_application1.id}")
       expect(page).to have_content(adoption_application2.name)
-      expect(page).to have_xpath("//adoption_applications/#{adoption_application2}")
+      expect(page).to have_link(nil, href: "/adoption_applications/#{adoption_application2.id}")
     end
   end
 end
