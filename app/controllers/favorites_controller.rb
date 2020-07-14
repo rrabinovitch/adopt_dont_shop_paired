@@ -1,8 +1,7 @@
 class FavoritesController < ApplicationController
   def index
-    @pets = Pet.all
+    @pets = Pet.has_application
     @favorites = Pet.find(favorite_pets.favorite_pets)
-    binding.pry
   end
 
   def update
