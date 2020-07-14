@@ -38,7 +38,7 @@ RSpec.describe "Application approval", type: :feature do
     expect(page).to have_content("On hold for #{adoption_application.name}")
   end
 
-  it "Only one application can be approved for each pet" do
+  it "Only one application can be approved for each pet but other applications remain on file" do
     shelter = Shelter.create!(name: "Primary Shelter", address: "123 Maple Ave.", city: "Denver", state: "CO", zip: "80438")
     pet = Pet.create!(name: "Bonnie", image: "http://www.gsgsrescue.org/assets/files/dogs/2020/06/IMG_1639_1.jpg", approximate_age: "13", sex: "Female", shelter_id: shelter.id, status: "Adoptable")
     adoption_application1 = AdoptionApplication.create!(name: "Ruthie R", address: "1245 Turing Ave", city: "Denver", state: "CO", zip: "80250", phone_number: "253-555-1843", description: "I love animals and I want them all.")
@@ -54,6 +54,6 @@ RSpec.describe "Application approval", type: :feature do
     expect(page).to_not have_content("Approve application for #{pet.name}")
     expect(page).to have_content("#{pet.name}'s adoption has been approved for another applicant.")
 
-
+    visit "/pets/#{pet.id}/adoption_applications"
   end
 end
