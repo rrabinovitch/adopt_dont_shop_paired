@@ -12,7 +12,7 @@
     <% if pet.status == "Adoptable" %>
       <%= button_to "Approve application for #{pet.name}", "/pets/#{pet.id}/adoption_applications/#{@adoption_application.id}", method: :patch %>
     <% else %>
-      <p><%= pet.name %> has already been approved for adoption by another applicant.</p>
+      <p><%= pet.name %>'s adoption has been approved for another applicant.</p>
     <% end %>
   <% end %>
 </ul>
