@@ -101,19 +101,8 @@ RSpec.describe "Favorites index page", type: :feature do
     pet_adoption_application = PetAdoptionApplication.create!(adoption_application_id: adoption_application.id, pet_id: pet1.id)
     pet_adoption_application = PetAdoptionApplication.create!(adoption_application_id: adoption_application.id, pet_id: pet2.id)
     pet_adoption_application = PetAdoptionApplication.create!(adoption_application_id: adoption_application.id, pet_id: pet1.id)
-binding.pry
-    visit "/favorites"
 
-    expect(page).to have_content("#{adoption_application.name}'s application:")
-    expect(page).to have_content("Address: #{adoption_application.address}")
-    expect(page).to have_content("City: #{adoption_application.city}")
-    expect(page).to have_content("State: #{adoption_application.state}")
-    expect(page).to have_content("Zip: #{adoption_application.zip}")
-    expect(page).to have_content("Phone Number: #{adoption_application.phone_number}")
-    expect(page).to have_content("Why: #{adoption_application.description}")
-    expect(page).to have_content("Applying to adopt:")
-    adoption_application.pets.each do |pet|
-      expect(page).to have_content(pet.name)
-    end
+    visit "/favorites"
+    expect(page).to have_link(nil, href: "/pets/#{pet1.id}")
   end
 end
