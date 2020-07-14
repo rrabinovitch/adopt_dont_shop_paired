@@ -36,5 +36,6 @@ RSpec.describe "Application approval", type: :feature do
     click_on "Approve application for #{pet2.name}"
     expect(page).to have_content("Adoption Status: Pending")
     expect(page).to have_content("On hold for #{adoption_application.name}")
+    
   end
 end
