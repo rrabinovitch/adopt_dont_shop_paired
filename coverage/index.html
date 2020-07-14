@@ -14,7 +14,7 @@
       <img src="./assets/0.12.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-07-13T17:19:45-06:00">2020-07-13T17:19:45-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-07-13T20:16:53-06:00">2020-07-13T20:16:53-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -73,7 +73,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#4a1477df3078cd882920a07e4fdacae49646dc31" class="src_link" title="app/controllers/adoption_applications_controller.rb">app/controllers/adoption_applications_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">31</td>
+            <td class="cell--number">32</td>
             <td class="cell--number">20</td>
             <td class="cell--number">20</td>
             <td class="cell--number">0</td>
@@ -791,7 +791,7 @@
 
             
 
-            <code class="ruby">    @adoption_application = AdoptionApplication.create(adoption_application_params)</code>
+            <code class="ruby">    adoption_application = AdoptionApplication.create(adoption_application_params)</code>
           </li>
         </div>
       
@@ -802,29 +802,29 @@
 
             
 
-            <code class="ruby">    @selected_pet_ids = params[:pet_ids]</code>
+            <code class="ruby">    selected_pet_ids = params[:pet_ids]</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="9">
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby">    # binding.pry</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="10">
             <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">    if @selected_pet_ids.nil? || !@adoption_application.save</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      flash[:notice] = &quot;Unsuccessful application submission: please fill in all application fields.&quot;</code>
+            <code class="ruby">    if selected_pet_ids.nil? || !adoption_application.save</code>
           </li>
         </div>
       
@@ -835,7 +835,7 @@
 
             
 
-            <code class="ruby">      redirect_to &quot;/adoption_applications/new&quot;</code>
+            <code class="ruby">      flash[:notice] = &quot;Unsuccessful application submission: please fill in all application fields.&quot;</code>
           </li>
         </div>
       
@@ -846,7 +846,7 @@
 
             
 
-            <code class="ruby">    elsif @adoption_application.save</code>
+            <code class="ruby">      redirect_to &quot;/adoption_applications/new&quot;</code>
           </li>
         </div>
       
@@ -857,7 +857,7 @@
 
             
 
-            <code class="ruby">      @selected_pet_ids.each do |pet_id|</code>
+            <code class="ruby">    elsif adoption_application.save</code>
           </li>
         </div>
       
@@ -868,7 +868,7 @@
 
             
 
-            <code class="ruby">        session[:favorites].delete(pet_id)</code>
+            <code class="ruby">      selected_pet_ids.each do |pet_id|</code>
           </li>
         </div>
       
@@ -879,12 +879,23 @@
 
             
 
-            <code class="ruby">        PetAdoptionApplication.create(adoption_application_id: @adoption_application.id, pet_id: pet_id)</code>
+            <code class="ruby">        session[:favorites].delete(pet_id)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="16">
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        PetAdoptionApplication.create(adoption_application_id: adoption_application.id, pet_id: pet_id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
             
             
 
@@ -895,7 +906,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="17">
+          <li class="covered" data-hits="1" data-linenumber="18">
             <span class="hits">1</span>
             
 
@@ -906,7 +917,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="18">
+          <li class="covered" data-hits="1" data-linenumber="19">
             <span class="hits">1</span>
             
 
@@ -917,7 +928,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="19">
+          <li class="never" data-hits="" data-linenumber="20">
             
             
 
@@ -928,7 +939,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="20">
+          <li class="never" data-hits="" data-linenumber="21">
             
             
 
@@ -939,24 +950,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="21">
+          <li class="never" data-hits="" data-linenumber="22">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="22">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def show</code>
           </li>
         </div>
       
@@ -967,18 +967,18 @@
 
             
 
-            <code class="ruby">    @adoption_application = AdoptionApplication.find(params[:id])</code>
+            <code class="ruby">  def show</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="24">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="24">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    @adoption_application = AdoptionApplication.find(params[:id])</code>
           </li>
         </div>
       
@@ -989,12 +989,23 @@
 
             
 
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="26">
+          <li class="covered" data-hits="1" data-linenumber="27">
             <span class="hits">1</span>
             
 
@@ -1005,7 +1016,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="27">
+          <li class="never" data-hits="" data-linenumber="28">
             
             
 
@@ -1016,7 +1027,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="28">
+          <li class="covered" data-hits="1" data-linenumber="29">
             <span class="hits">1</span>
             
 
@@ -1027,7 +1038,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="29">
+          <li class="covered" data-hits="2" data-linenumber="30">
             <span class="hits">2</span>
             
 
@@ -1038,7 +1049,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="30">
+          <li class="never" data-hits="" data-linenumber="31">
             
             
 
@@ -1049,7 +1060,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="31">
+          <li class="never" data-hits="" data-linenumber="32">
             
             
 
