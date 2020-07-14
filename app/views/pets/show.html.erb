@@ -14,3 +14,4 @@
 
 <p><%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %></p>
 <p><%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %></p>
+<p><%= link_to "View all applications for #{@pet.name}", "/pets/#{@pet.id}/adoption_applications" %></p>
