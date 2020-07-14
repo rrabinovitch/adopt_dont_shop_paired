@@ -8,9 +8,8 @@
   <p><%= label_tag :rating %>
   <%= number_field_tag :rating, @shelter_review.rating %></p>
   <p><%= label_tag :content %>
-  <%= text_field_tag :content, @shelter_review.content%></p>
+  <%= text_area_tag :content, @shelter_review.content%></p>
   <p><%= label_tag :picture %>
   <%= text_field_tag :picture, @shelter_review.picture %></p>
   <p><%= submit_tag "Update Review" %></p>
 <% end %>
-
