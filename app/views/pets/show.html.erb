@@ -5,6 +5,9 @@
 <p> Aproximate Age: <%= @pet.approximate_age %> </p>
 <p> Sex: <%= @pet.sex %> </p>
 <p> Adoption Status: <%= @pet.status %> </p>
+<% if @adoption_application %>
+  <p>On hold for <%= @adoption_application.name %></p>
+<% end %>
 
 <% if @favorites.include?(@pet.id.to_s) %>
   <p><%= button_to "Remove Pet From Favorites", "/favorites/#{@pet.id}", method: :delete %></p>
