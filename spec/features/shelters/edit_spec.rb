@@ -59,7 +59,6 @@ RSpec.describe "As a visitor", type: :feature do
 
     click_on 'Update Shelter'
 
-    save_and_open_page
     expect(current_path).to eq("/shelters/#{test_shelter.id}/edit")
 
     expect(page).to have_content('Unsuccessful shelter submission, please fill in the following fields prior to submission: ["address", "city", "state", "zip"]')
