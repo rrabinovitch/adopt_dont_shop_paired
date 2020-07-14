@@ -10,6 +10,8 @@ class PetsController < ApplicationController
     else
       @favorites = []
     end
+    @adoption_application = @pet.adoption_applications[0]
+    # should probably use a join b/w pets <> adoption applications where pets.id = @pet.id & pets.status = pending
   end
 
   def new
@@ -26,13 +28,6 @@ class PetsController < ApplicationController
     pet.update(pet_params)
     redirect_to "/pets/#{params[:id]}"
   end
-
-  # def update_adoption_status
-  #   pet = Pet.find(params[:id])
-  #   pet.update(adoption_status: "Pending")
-  #   # look into how to add ^ into params via link_to??
-  #   redirect_to "/pets/#{params[:id]}"
-  # end
 
   def destroy
     pet = Pet.find(params[:id])

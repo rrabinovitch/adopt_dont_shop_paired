@@ -18,7 +18,7 @@ RSpec.describe "Adoption application show page", type: :feature do
     expect(page).to have_content("Zip: #{adoption_application.zip}")
     expect(page).to have_content("Phone Number: #{adoption_application.phone_number}")
     expect(page).to have_content("Why: #{adoption_application.description}")
-    expect(page).to have_content("Applying to adopt:")
+    expect(page).to have_content("Adoption applicant(s):")
     adoption_application.pets.each do |pet|
       expect(page).to have_content(pet.name)
     end

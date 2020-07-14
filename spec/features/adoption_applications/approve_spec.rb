@@ -14,17 +14,11 @@ RSpec.describe "Application approval", type: :feature do
     expect(page).to have_button("Approve application for #{pet2.name}")
 
     click_on "Approve application for #{pet1.name}"
-    # ^^ link_to should direct to a patch/put html verb method via route below
-    # route goes to #update_adoption_status controller method
-    expect(current_path).to eq("pets/#{pet1.id}")
+
+    expect(current_path).to eq("/pets/#{pet1.id}")
     expect(page).to have_content("Adoption Status: Pending")
     expect(page).to have_content("On hold for #{adoption_application.name}")
     # pry under pet in controller #show action, use dot notation off of the pet to get applicant name
     # update view to check whether pet's adoption status is pending and if so show the above text
-
-
-    visit "/adoption_applications/#{adoption_application.id}"
-
-    click_on "Approve application for #{pet2.name}"
   end
 end
