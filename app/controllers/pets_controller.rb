@@ -2,7 +2,7 @@ class PetsController < ApplicationController
   def index
     @pets = Pet.all.sort_by_status
   end
-  
+
   def show
     @pet = Pet.find(params[:id])
     if session[:favorites] != nil
@@ -13,27 +13,34 @@ class PetsController < ApplicationController
   end
 
   def new
-    
+
   end
 
   def edit
     @pet = Pet.find(params[:id])
     # @shelter = Shelter.find(params[:id])
   end
-  
+
   def update
     pet = Pet.find(params[:id])
     pet.update(pet_params)
     redirect_to "/pets/#{params[:id]}"
   end
-  
+
+  # def update_adoption_status
+  #   pet = Pet.find(params[:id])
+  #   pet.update(adoption_status: "Pending")
+  #   # look into how to add ^ into params via link_to??
+  #   redirect_to "/pets/#{params[:id]}"
+  # end
+
   def destroy
     pet = Pet.find(params[:id])
     session[:favorites].delete(pet.id.to_s) if session[:favorites] != nil
     Pet.destroy(params[:id])
     redirect_to "/pets/"
   end
-  
+
   private
 
   def pet_params
