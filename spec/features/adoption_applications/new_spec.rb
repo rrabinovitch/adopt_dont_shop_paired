@@ -36,7 +36,7 @@ RSpec.describe "New adoption application", type: :feature do
     expect(page).to have_content("Your adoption application has been submitted!")
 
     expect(current_path).to eq("/favorites")
-    expect(page).to_not have_content("Bonnie")
+    # expect(page).to_not have_content("Bonnie") - Bonnie now shows up due to User Story 18
   end
 
   it "Incomplete application" do
