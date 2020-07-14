@@ -9,10 +9,4 @@ class Favorites
     @favorite_pets.count
   end
   
-  def favorite_array
-    @favorite_pets.map do |pet|
-      pet
-    end
-  end
-  
 end
