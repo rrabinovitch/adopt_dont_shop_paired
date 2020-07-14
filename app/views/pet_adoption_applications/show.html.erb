@@ -1,0 +1,10 @@
+<% if @adoption_applications.empty? %>
+  <h2>No applications have been submitted for <%= @pet.name %>.</h2>
+<% else %>
+  <h2>Applications to Adopt<%= @pet.name %>:</h2>
+  <ul class="adoption-applicants">
+    <% @adoption_applications.each do |application| %>
+    <li><%= link_to "#{application.name}", "/adoption_applications/#{application.id}" %></li>
+    <% end %>
+  </ul>
+<% end %>

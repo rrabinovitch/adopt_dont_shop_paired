@@ -8,5 +8,4 @@ class Favorites
   def total
     @favorite_pets.count
   end
-  
 end
