@@ -1,4 +1,5 @@
 <h2>Favorited Pets</h2>
+<hr/>
 <% if @favorites.empty? %>
   <h1>No pets to see here. Explore pets <%= link_to "here", "/pets" %> and select some of your favorites!</h1>
 <% else %>
@@ -10,6 +11,10 @@
     <p> <%= button_to "Remove Pet From Favorites", "/favorites/#{favorite.id}", method: :delete %></p>
   <%  end %>
 <%  end %>
+<hr/>
+<h1> Pets with pending applications: </h1>
+<% @pets.each do |pet| %>
+<p> <%= link_to "#{pet.name}", "/pets/#{pet.id}" %> </p>
+<% end %>
 
-
-PetAdoptionApplication.select(:pet_id).having("quantity > 1")
+Removed rb:39 - Bonnie now shows up due to User Story 18
