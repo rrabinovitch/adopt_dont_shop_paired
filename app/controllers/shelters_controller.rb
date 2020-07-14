@@ -15,7 +15,7 @@ class SheltersController < ApplicationController
               zip: params[:zip]
               })
               
-    missing_fields = shelter_params.select{|_,v| v.nil? || v == ""}.keys
+    missing_fields = shelter_params.select{|_,value| value.nil? || value == ""}.keys
     if missing_fields.empty?
       shelter.save
       redirect_to '/shelters'
@@ -33,7 +33,7 @@ class SheltersController < ApplicationController
   def update
     shelter = Shelter.find(params[:id])
     
-    missing_fields = shelter_params.select{|_,v| v.nil? || v == ""}.keys
+    missing_fields = shelter_params.select{|_,value| value.nil? || value == ""}.keys
     if missing_fields.empty?
       shelter.update(shelter_params)
       redirect_to "/shelters/#{params[:id]}"
