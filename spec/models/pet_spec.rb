@@ -7,7 +7,7 @@ RSpec.describe Pet, type: :model do
     it { should have_many(:adoption_applications).through(:pet_adoption_applications) }
   end
 
-  describe "class methods" do
+  describe "methods" do
     it ".sort_by_status" do
       shelter = Shelter.create(name: "Best Shelter", address: "743 Mountain Drive", city: "Golden", state: "CO", zip: "80433")
 
@@ -55,6 +55,15 @@ RSpec.describe Pet, type: :model do
       pets = Pet.has_application
       applications_array = pets.map {|pet| pet.name}
       expect(applications_array.first).to eq("#{pet.name}")
+    end
+
+    it "#adoptable?" do
+      shelter = Shelter.create!(name: "Primary Shelter", address: "123 Maple Ave.", city: "Denver", state: "CO", zip: "80438")
+      pet1 = Pet.create!(name: "Bonnie", image: "http://www.gsgsrescue.org/assets/files/dogs/2020/06/IMG_1639_1.jpg", approximate_age: "13", sex: "Female", shelter_id: shelter.id, status: "Adoptable")
+      pet2 = Pet.create!(name: "George", image: "http://www.gsgsrescue.org/assets/files/dogs/2020/06/IMG_1639_1.jpg", approximate_age: "11", sex: "Male", shelter_id: shelter.id, status: "Pending")
+
+      expect(pet1.adoptable?).to eq(true)
+      expect(pet2.adoptable?).to eq(false)
     end
   end
 end
