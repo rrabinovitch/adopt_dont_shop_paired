@@ -14,6 +14,8 @@ Additionally, adoption applications can be submitted for many pets, and each pet
 
 In order to apply to adopt pets, they must first be favorited, a feature which uses our familiarity with cart and order functionality. Implementation of this favoriting feature utilized POROs and sessions in order to store an array of the ids of pets that have been favorited and track the number of favorited pets.
 
+The deployed version of our application can be found (here)[https://lit-depths-46900.herokuapp.com/].
+
 * ADD ERD HERE
 
 The learning goals, requirements, and user stories used as guidance for this project (as well as the previous solo project version) can be seen below.
