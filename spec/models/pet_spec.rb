@@ -47,5 +47,14 @@ RSpec.describe Pet, type: :model do
       expect(pet1.adoptable?).to eq(true)
       expect(pet2.adoptable?).to eq(false)
     end
+
+    it "#pending?" do
+      shelter = Shelter.create!(name: "Primary Shelter", address: "123 Maple Ave.", city: "Denver", state: "CO", zip: "80438")
+      pet1 = Pet.create!(name: "Bonnie", image: "http://www.gsgsrescue.org/assets/files/dogs/2020/06/IMG_1639_1.jpg", approximate_age: "13", sex: "Female", shelter_id: shelter.id, status: "Adoptable")
+      pet2 = Pet.create!(name: "George", image: "http://www.gsgsrescue.org/assets/files/dogs/2020/06/IMG_1639_1.jpg", approximate_age: "11", sex: "Male", shelter_id: shelter.id, status: "Pending")      # adoption_application1 = AdoptionApplication.create!(name: "Ruthie R", address: "1245 Turing Ave", city: "Denver", state: "CO", zip: "80250", phone_number: "253-555-1843", description: "I love animals and I want them all.")
+
+      expect(pet1.pending?).to eq(false)
+      expect(pet2.pending?).to eq(true)
+    end
   end
 end

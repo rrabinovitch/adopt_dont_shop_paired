@@ -16,17 +16,9 @@ class PetAdoptionApplicationsController < ApplicationController
       pet_adoption_application.update(status: "Pending")
       pet.update(status: "Adoptable")
     end
-    # PetAdoptionApplication.find_by("pet_id = #{params[:pet_id]} and adoption_application_id = #{params[:pet_adoption_application_id]}")
-    #
-    # pet = Pet.find(params[:pet_id])
-    # pet.update(status: "Pending")
-    # binding.pry
-    redirect_to "/pets/#{params[:pet_id]}"
-    # have access to pet adoption application through the id
-    # update pet adoption application status to whatever it's not
 
+    redirect_to "/pets/#{params[:pet_id]}"
 
     # add app.approved? helper method
-
   end
 end
