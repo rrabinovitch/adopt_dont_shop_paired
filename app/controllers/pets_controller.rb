@@ -20,7 +20,6 @@ class PetsController < ApplicationController
 
   def edit
     @pet = Pet.find(params[:id])
-    # @shelter = Shelter.find(params[:id])
   end
 
   def update

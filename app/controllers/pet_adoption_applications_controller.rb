@@ -6,9 +6,17 @@ class PetAdoptionApplicationsController < ApplicationController
   end
 
   def update
-    pet_id = params[:pet_id]
-    pet = Pet.find(pet_id)
-    pet.update(status: "Pending")
-    redirect_to "/pets/#{pet_id}"
+    pet_adoption_application = PetAdoptionApplication.find(params[:pet_adoption_application_id])
+    pet = Pet.find(params[:pet_id])
+
+    if pet_adoption_application.pending?
+      pet_adoption_application.update(status: "Approved")
+      pet.update(status: "Pending")
+    elsif pet_adoption_application.approved?
+      pet_adoption_application.update(status: "Pending")
+      pet.update(status: "Adoptable")
+    end
+
+    redirect_to "/pets/#{params[:pet_id]}"
   end
 end

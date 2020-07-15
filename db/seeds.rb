@@ -44,6 +44,6 @@ pet4 = shelter2.pets.create!(
           description: "A loving 3 year old pup looking for a partner to play fetch with!",
           status: "Adoptable"
           )
-          
+
 shelter_review1 = shelter1.shelter_reviews.create!(title: "Okay shelter!", rating: 2, content: "Too many sad dogs.", picture: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2019%2F01%2Fpuppies.jpg")
 shelter_review2 = shelter2.shelter_reviews.create!(title: "Okay shelter!", rating: 2, content: "Too many sad dogs.")
