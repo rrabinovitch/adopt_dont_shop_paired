@@ -18,6 +18,7 @@ class AdoptionApplicationsController < ApplicationController
 
   def show
     @adoption_application = AdoptionApplication.find(params[:id])
+    @pets = @adoption_application.pets
   end
 
   private
@@ -29,7 +30,7 @@ class AdoptionApplicationsController < ApplicationController
   def make_pet_adoption_applications(selected_pet_ids, adoption_application)
     selected_pet_ids.each do |pet_id|
       session[:favorites].delete(pet_id)
-      PetAdoptionApplication.create(adoption_application_id: adoption_application.id, pet_id: pet_id)
+      PetAdoptionApplication.create(adoption_application_id: adoption_application.id, pet_id: pet_id, status: "Pending")
     end
   end
 

@@ -52,7 +52,7 @@ RSpec.describe "Application approval", type: :feature do
 
     visit "/adoption_applications/#{adoption_application2.id}"
     expect(page).to_not have_content("Approve application for #{pet.name}")
-    expect(page).to have_content("#{pet.name}'s adoption has been approved for another applicant.")
+    expect(page).to have_content("#{pet.name}'s adoption is pending.")
 
     visit "/pets/#{pet.id}/adoption_applications"
     expect(page).to have_link(adoption_application2.name)

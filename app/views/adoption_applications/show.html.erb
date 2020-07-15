@@ -5,14 +5,14 @@
 <p>Zip: <%= @adoption_application.zip %></p>
 <p>Phone Number: <%= @adoption_application.phone_number %></p>
 <p>Why: <%= @adoption_application.description %></p>
-<p>Adoption applicant(s):</p>
+<p>Pets applied for:</p>
 <ul>
-  <% @adoption_application.pets.each do |pet| %>
+  <% @pets.each do |pet| %>
     <li><%= pet.name %></li>
     <% if pet.adoptable? %>
       <%= button_to "Approve application for #{pet.name}", "/pets/#{pet.id}/adoption_applications/#{@adoption_application.id}", method: :patch %>
     <% else %>
-      <p><%= pet.name %>'s adoption has been approved for another applicant.</p>
+      <p><%= pet.name %>'s adoption is pending.</p>
     <% end %>
   <% end %>
 </ul>
