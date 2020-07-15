@@ -11,7 +11,7 @@
     <li> <%= app.pet.name %> </li>
     <% if app.pet.adoptable? %>
       <%= button_to "Approve application for #{app.pet.name}", "/pets/#{app.pet.id}/pet_adoption_applications/#{app.id}", method: :patch %>
-    <% elsif app.status == "Approved" %>
+    <% elsif app.approved? %>
       <%= button_to "Revoke application for #{app.pet.name}", "/pets/#{app.pet.id}/pet_adoption_applications/#{app.id}", method: :patch %>
     <% else %>
       <p><%= app.pet.name %>'s adoption is pending.</p>
