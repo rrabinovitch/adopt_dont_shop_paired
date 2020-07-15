@@ -34,7 +34,6 @@ Rails.application.routes.draw do
   get '/adoption_applications/:id', to: 'adoption_applications#show'
 
   get '/pets/:id/adoption_applications', to: 'pet_adoption_applications#index'
-  # ^^ this should route to /pets/:id/pet_adoption_applications
   patch '/pets/:pet_id/pet_adoption_applications/:pet_adoption_application_id', to: 'pet_adoption_applications#update'
 
 end
