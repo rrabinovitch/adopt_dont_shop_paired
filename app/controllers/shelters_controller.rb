@@ -23,7 +23,6 @@ class SheltersController < ApplicationController
       flash[:notice] = "Unsuccessful shelter submission, please fill in the following fields prior to submission: #{missing_fields.each { |field| p "#{field} "}}"
       redirect_to "/shelters/new"
     end
-
   end
 
   def edit
@@ -32,7 +31,6 @@ class SheltersController < ApplicationController
 
   def update
     shelter = Shelter.find(params[:id])
-    
     missing_fields = shelter_params.select{|_,user_input| user_input.nil? || user_input == ""}.keys
     if missing_fields.empty?
       shelter.update(shelter_params)
@@ -41,8 +39,6 @@ class SheltersController < ApplicationController
       flash[:notice] = "Unsuccessful shelter submission, please fill in the following fields prior to submission: #{missing_fields.each { |field| p "#{field} "}}"
       redirect_to "/shelters/#{params[:id]}/edit"
     end
-    
-  
   end
 
   def show
@@ -51,8 +47,15 @@ class SheltersController < ApplicationController
   end
 
   def destroy
-    Shelter.destroy(params[:id])
-    redirect_to "/shelters"
+    shelter = Shelter.find(params[:id])
+    has_pending_applications = Shelter.has_pending_applications?(shelter.id)
+    if has_pending_applications == false
+      Shelter.destroy(params[:id])
+      redirect_to "/shelters"
+    elsif has_pending_applications == true
+      flash[:notice] = "Unable to delete #{shelter.name}, the shelter has has pending applications"
+      redirect_to "/shelters"
+    end
   end
 
   def pets_index

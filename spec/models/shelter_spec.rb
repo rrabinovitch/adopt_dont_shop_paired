@@ -19,4 +19,19 @@ RSpec.describe Shelter, type: :model do
     applications = test_shelter.applications_total
     expect(applications).to eq(PetAdoptionApplication.all.length)
   end
+
+  it ".has_pending_applications" do
+    test_shelter = Shelter.create!(name: "Test Shelter", address: "114 Test Address", city: "Test City", state: "CO", zip: "80202")
+    pet1 = Pet.create!(name: "Bonnie", image: "http://www.gsgsrescue.org/assets/files/dogs/2020/06/IMG_1639_1.jpg", approximate_age: "13", sex: "Female", shelter_id: test_shelter.id, status: "Adoptable")
+    adoption_application = AdoptionApplication.create!(name: "Ruthie R", address: "1245 Turing Ave", city: "Denver", state: "CO", zip: "80250", phone_number: "253-555-1843", description: "I love animals and I want them all.")
+    pet_adoption_application = PetAdoptionApplication.create!(adoption_application_id: adoption_application.id, pet_id: pet1.id, status: "Pending")
+
+    expect(Shelter.has_pending_applications?(test_shelter.id)).to eq(false)
+
+    #Approving applications here
+    pet_adoption_application.update(status: "Approved")
+    pet1.update(status: "Pending")
+
+    expect(Shelter.has_pending_applications?(test_shelter.id)).to eq(true)
+  end
 end
