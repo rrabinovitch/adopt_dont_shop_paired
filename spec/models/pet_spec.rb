@@ -41,9 +41,6 @@ RSpec.describe Pet, type: :model do
     
     it ".has_application" do
       shelter = Shelter.create(name: "Best Shelter", address: "743 Mountain Drive", city: "Golden", state: "CO", zip: "80433")
-      adoption_application = AdoptionApplication.create!(name: "Ruthie R", address: "1245 Turing Ave", city: "Denver", state: "CO", zip: "80250", phone_number: "253-555-1843", description: "I love animals and I want them all.")
-      PetAdoptionApplication.create!(adoption_application_id: adoption_application.id, pet_id: pet.id)
-      
       pet = Pet.create(
                 image: "http://www.gsgsrescue.org/assets/files/dogs/2020/06/IMG_1639_1.jpg",
                 name: "Bella",
@@ -52,10 +49,12 @@ RSpec.describe Pet, type: :model do
                 shelter_id: shelter.id,
                 status: "Adoptable"
                 )
+      adoption_application = AdoptionApplication.create!(name: "Ruthie R", address: "1245 Turing Ave", city: "Denver", state: "CO", zip: "80250", phone_number: "253-555-1843", description: "I love animals and I want them all.")
+      PetAdoptionApplication.create!(adoption_application_id: adoption_application.id, pet_id: pet.id)
       
       pets = Pet.has_application
       applications_array = pets.map {|pet| pet.name}
-      expect(applicatins_array).to eq("#{pet.name}")
+      expect(applications_array.first).to eq("#{pet.name}")
     end
   end
 end
