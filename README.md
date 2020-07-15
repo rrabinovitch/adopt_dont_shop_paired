@@ -12,11 +12,12 @@ This project utilizes our recent learnings about one-to-many (`shelters`<>`pets`
 
 Additionally, adoption applications can be submitted for many pets, and each pet can have multiple applications submitted for it. Each application can be approved for any number of pets (ie, if an application is for 3 pets, it can be approved for 0, 1, 2, or 3 pets), and each approved `pet`<>`adoption application` relationship can be revoked as well.
 
-In order to apply to adopt pets, they must first be favorited, a feature which uses our familiarity with cart and order functionality.
+In order to apply to adopt pets, they must first be favorited, a feature which uses our familiarity with cart and order functionality. Implementation of this favoriting feature utilized POROs and sessions in order to store an array of the ids of pets that have been favorited and track the number of favorited pets.
 
 * ADD ERD HERE
 
 The learning goals, requirements, and user stories used as guidance for this project (as well as the previous solo project version) can be seen below.
+
 
 ## Learning Goals
 
