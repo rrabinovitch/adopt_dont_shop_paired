@@ -52,4 +52,26 @@ RSpec.describe "Pet show page", type: :feature do
     expect(page).to_not have_xpath("//img[@src='#{pet1.image}']")
     
   end
+  
+  it "When I delete a favorited pet it also removes it from the favorites list" do
+    shelter = Shelter.create(name: "Primary Shelter", address: "123 Maple Ave.", city: "Denver", state: "CO", zip: "80438")
+    pet1 = Pet.create(name: "Bonnie", image: "http://www.gsgsrescue.org/assets/files/dogs/2020/06/IMG_1639_1.jpg", approximate_age: "13", sex: "Female", shelter_id: shelter.id, status: "Adoptable")
+
+    visit "/pets/#{pet1.id}"
+    within("navbar") do
+      expect(page).to have_content("Favorites - 0")
+    end
+    
+    click_button 'Favorite'
+
+    within("navbar") do
+      expect(page).to have_content("Favorites - 1")
+    end
+  
+    click_link 'Delete Pet'
+    
+    within("navbar") do
+      expect(page).to have_content("Favorites - 0")
+    end
+  end  
 end

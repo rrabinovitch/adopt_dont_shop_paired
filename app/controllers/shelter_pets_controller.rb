@@ -15,8 +15,21 @@ class ShelterPetsController < ApplicationController
               shelter_id: params[:id]
               })
               
-    pet.save
-    redirect_to "/shelters/#{params[:id]}/pets/"
+    missing_fields = pet_params.select{|_,user_input| user_input.nil? || user_input == ""}.keys
+    if missing_fields.empty?
+      pet.save
+      redirect_to "/shelters/#{params[:id]}/pets"
+    else
+      flash[:notice] = "Unsuccessful shelter submission, please fill in the following fields prior to submission: #{missing_fields.each { |field| p "#{field} "}}"
+      redirect_to "/shelters/#{params[:id]}/pets/new"
+    end
+              
+              
+
+  end
+  
+  def pet_params
+    params.permit(:image, :name, :description, :approximate_age, :sex, :status)
   end
   
 end

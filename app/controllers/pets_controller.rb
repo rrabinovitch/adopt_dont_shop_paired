@@ -24,8 +24,16 @@ class PetsController < ApplicationController
 
   def update
     pet = Pet.find(params[:id])
-    pet.update(pet_params)
-    redirect_to "/pets/#{params[:id]}"
+    
+    missing_fields = pet_params.select{|_,user_input| user_input.nil? || user_input == ""}.keys
+    if missing_fields.empty?
+      pet.update(pet_params)
+      redirect_to "/pets/#{params[:id]}"
+    else
+      flash[:notice] = "Unsuccessful shelter submission, please fill in the following fields prior to submission: #{missing_fields.each { |field| p "#{field} "}}"
+      redirect_to "/pets/#{params[:id]}/edit"
+    end
+
   end
 
   def destroy

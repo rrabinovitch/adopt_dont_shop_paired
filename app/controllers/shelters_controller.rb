@@ -14,8 +14,16 @@ class SheltersController < ApplicationController
               state: params[:state],
               zip: params[:zip]
               })
-    shelter.save
-    redirect_to '/shelters'
+              
+    missing_fields = shelter_params.select{|_,user_input| user_input.nil? || user_input == ""}.keys
+    if missing_fields.empty?
+      shelter.save
+      redirect_to '/shelters'
+    else
+      flash[:notice] = "Unsuccessful shelter submission, please fill in the following fields prior to submission: #{missing_fields.each { |field| p "#{field} "}}"
+      redirect_to "/shelters/new"
+    end
+
   end
 
   def edit
@@ -24,8 +32,17 @@ class SheltersController < ApplicationController
 
   def update
     shelter = Shelter.find(params[:id])
-    shelter.update(shelter_params)
-    redirect_to "/shelters/#{params[:id]}"
+    
+    missing_fields = shelter_params.select{|_,user_input| user_input.nil? || user_input == ""}.keys
+    if missing_fields.empty?
+      shelter.update(shelter_params)
+      redirect_to "/shelters/#{params[:id]}"
+    else
+      flash[:notice] = "Unsuccessful shelter submission, please fill in the following fields prior to submission: #{missing_fields.each { |field| p "#{field} "}}"
+      redirect_to "/shelters/#{params[:id]}/edit"
+    end
+    
+  
   end
 
   def show
