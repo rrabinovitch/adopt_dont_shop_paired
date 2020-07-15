@@ -31,7 +31,7 @@ class PetsController < ApplicationController
       redirect_to "/pets/#{params[:id]}"
     else
       flash[:notice] = "Unsuccessful shelter submission, please fill in the following fields prior to submission: #{missing_fields.each { |field| p "#{field} "}}"
-      redirect_to "/pets/#{params[:id]}"
+      redirect_to "/pets/#{params[:id]}/edit"
     end
 
   end
