@@ -1,11 +1,25 @@
 # Adopt Don't Shop Paired Project
-BE Mod 2 Week 2/3 Pair Project
+Turing School of Software & Design, Back End Module 2, Weeks 2-3 Pair Project
 
 ## Background and Description
 
-"Adopt Don't Shop Paired" is a fictitious pet adoption platform where visitors can favorite pets and apply to adopt their newest furry friend.
+"Adopt Don't Shop Paired" is a fictitious pet adoption platform where visitors can favorite pets and apply to adopt their newest furry friend. This project was completed in a pair by [Ruthie Rabinovitch](https://github.com/rrabinovitch) and [Garrett Gerdsen](https://github.com/ggerdsen)
 
-Students will be put into pairs to complete the project.
+This project built off of Garrett's solo project repo from week 1 of Module 2, Adopt Don't Shop.
+
+## Overview
+For a visual representation of the relationships between our database resources, you may find our project ERD here: https://github.com/rrabinovitch/adopt_dont_shop_paired/blob/readme_update/erd.pdf.
+
+This project utilizes our recent learnings about one-to-many (`shelters`<>`pets`, `shelters`<>`shelter reviews`) and many-to-many relationships (`pets`<>`adoption applications`). As the ERD shows, each shelter can have many pets and reviews - all of which have CRUD functionality.
+
+Additionally, adoption applications can be submitted for many pets, and each pet can have multiple applications submitted for it. Each application can be approved for any number of pets (ie, if an application is for 3 pets, it can be approved for 0, 1, 2, or 3 pets), and each approved `pet`<>`adoption application` relationship can be revoked as well.
+
+In order to apply to adopt pets, they must first be favorited, a feature which uses our familiarity with cart and order functionality. Implementation of this favoriting feature utilized POROs and sessions in order to store an array of the ids of pets that have been favorited and track the number of favorited pets.
+
+The deployed version of our application can be found (here)[https://lit-depths-46900.herokuapp.com/].
+
+The learning goals, requirements, and user stories that guided our completion of this project (as well as the solo version of the project) can be found below.
+
 
 ## Learning Goals
 
@@ -56,19 +70,6 @@ Students will be put into pairs to complete the project.
 
 - if there is a specific gem you'd like to use in the project, please get permission from your instructors first
 
-## Setup
-This project builds off of the solo project, Adopt Don't Shop. Between you and your partner, choose which one of your repos you'd like to use. If you choose to use Partner A's solo project, Partner A will clone their project into a new directory and push up to a new repo on github. Then, Partner A should add Partner B as a collaborator to that project.
-
-## Suggested Timeline
-- Monday: 1-4
-- Tuesday: 2-7
-- Wednesday: 8-11
-- Thursday: 9-10
-- Friday: 12-15
-- Weekend: 16-25
-- Monday: 26-30
-- Tuesday: 31-33
-- Wednesday: 34-36
 
 
 ## User Stories

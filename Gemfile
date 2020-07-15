@@ -41,6 +41,7 @@ group :development, :test do
   gem 'pry'
   gem 'simplecov'
   gem 'shoulda-matchers'
+  gem 'rails-erd'
 end
 
 group :development do
