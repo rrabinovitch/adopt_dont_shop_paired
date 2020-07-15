@@ -31,16 +31,21 @@ class PetsController < ApplicationController
       redirect_to "/pets/#{params[:id]}"
     else
       flash[:notice] = "Unsuccessful shelter submission, please fill in the following fields prior to submission: #{missing_fields.each { |field| p "#{field} "}}"
-      redirect_to "/pets/#{params[:id]}/edit"
+      redirect_to "/pets/#{params[:id]}"
     end
 
   end
 
   def destroy
     pet = Pet.find(params[:id])
-    session[:favorites].delete(pet.id.to_s) if session[:favorites] != nil
-    Pet.destroy(params[:id])
-    redirect_to "/pets/"
+    if pet.status == "Pending"
+      flash[:notice] = "Unable to delete #{pet.name} because it has an approved application"
+      redirect_to "/pets/#{pet.id}"
+    else
+      session[:favorites].delete(pet.id.to_s) if session[:favorites] != nil
+      Pet.destroy(params[:id])
+      redirect_to "/pets/"
+    end
   end
 
   private
