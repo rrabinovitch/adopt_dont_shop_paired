@@ -48,7 +48,7 @@ RSpec.describe "As a visitor", type: :feature do
     fill_in 'Sex', with: ''
 
     click_on 'Create Pet'
-    save_and_open_page
+    
     expect(current_path).to eq("/shelters/#{@shelter.id}/pets/new")
     expect(page).to have_content('Unsuccessful shelter submission, please fill in the following fields prior to submission: ["description", "approximate_age", "sex"]')
 
