@@ -18,8 +18,6 @@ class AdoptionApplicationsController < ApplicationController
 
   def show
     @adoption_application = AdoptionApplication.find(params[:id])
-    @pets = @adoption_application.pets
-    binding.pry
   end
 
   private

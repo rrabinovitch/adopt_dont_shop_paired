@@ -16,4 +16,8 @@ class Pet < ApplicationRecord
   def adoptable?
     status == "Adoptable"
   end
+
+  def pending? ## ADD TEST
+    status == "Pending"
+  end
 end
