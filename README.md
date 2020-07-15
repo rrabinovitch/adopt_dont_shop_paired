@@ -16,7 +16,7 @@ In order to apply to adopt pets, they must first be favorited, a feature which u
 
 The deployed version of our application can be found (here)[https://lit-depths-46900.herokuapp.com/].
 
-* ADD ERD HERE
+![ERD](https://github.com/rrabinovitch/adopt_dont_shop_paired/blob/readme_update/erd.pdf)
 
 The learning goals, requirements, and user stories used as guidance for this project (as well as the previous solo project version) can be seen below.
 
