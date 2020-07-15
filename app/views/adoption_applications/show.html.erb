@@ -8,7 +8,7 @@
 <p>Pets applied for:</p>
 <ul>
   <% @adoption_application.pet_adoption_applications.each do |app| %>
-    <li> <%= app.pet.name %> </li>
+    <li> <%= link_to "#{app.pet.name}", "/pets/#{app.pet.id}" %> </li>
     <% if app.pet.adoptable? %>
       <%= button_to "Approve application for #{app.pet.name}", "/pets/#{app.pet.id}/pet_adoption_applications/#{app.id}", method: :patch %>
     <% elsif app.approved? %>

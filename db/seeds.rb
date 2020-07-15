@@ -19,10 +19,3 @@ pet4 = shelter2.pets.create!(image: "https://www.sciencemag.org/sites/default/fi
 
 shelter_review1 = shelter1.shelter_reviews.create!(title: "Okay shelter!", rating: 2, content: "Too many sad dogs.", picture: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2019%2F01%2Fpuppies.jpg")
 shelter_review2 = shelter2.shelter_reviews.create!(title: "Pretty good shelter", rating: 4, content: "Has good dogs.")
-
-adoption_application1 = AdoptionApplication.create!(name: "Garrett G", address: "24352 Colfax Ave", city: "Boulder", state: "CO", zip: "80004", phone_number: "845-285-4885", description: "I deserve all the pets.")
-adoption_application2 = AdoptionApplication.create!(name: "Ruthie R", address: "13278 Pearl St", city: "Denver", state: "CO", zip: "80205", phone_number: "346-123-9465", description: "Gimme a pet.")
-
-garrett_pet1_app = PetAdoptionApplication.create!(adoption_application_id: adoption_application1.id, pet_id: pet1.id, status: "Pending")
-garrett_pet2_app = PetAdoptionApplication.create!(adoption_application_id: adoption_application1.id, pet_id: pet2.id, status: "Pending")
-ruthie_pet1_app = PetAdoptionApplication.create!(adoption_application_id: adoption_application2.id, pet_id: pet1.id, status: "Pending")
