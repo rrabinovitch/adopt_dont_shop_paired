@@ -29,6 +29,7 @@ RSpec.describe "Application approval", type: :feature do
     visit "/adoption_applications/#{adoption_application.id}"
 
     click_on "Approve application for #{pet1.name}"
+    # save_and_open_page
     expect(page).to have_content("Adoption Status: Pending")
     expect(page).to have_content("On hold for #{adoption_application.name}")
 
@@ -71,11 +72,7 @@ RSpec.describe "Application approval", type: :feature do
     expect(page).to_not have_content("Approve application for #{pet.name}")
     click_on "Revoke application for #{pet.name}"
 
-    expect(current_path).to eq("/adoption_applications/#{adoption_application.id}")
-    expect(page).to have_link("Approve application for #{pet.name}")
-
-    visit "/pets/#{pet.id}"
+    expect(current_path).to eq("/pets/#{pet.id}")
     expect(page).to have_content("Adoption Status: Adoptable")
-    expect(page).to_not have_content("On hold")
   end
 end

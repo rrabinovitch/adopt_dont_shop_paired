@@ -5,7 +5,8 @@
 <p> Aproximate Age: <%= @pet.approximate_age %> </p>
 <p> Sex: <%= @pet.sex %> </p>
 <p> Adoption Status: <%= @pet.status %> </p>
-<% if @adoption_application %>
+
+<% if @pet.pending? %>
   <p>On hold for <%= @adoption_application.name %></p>
 <% end %>
 
