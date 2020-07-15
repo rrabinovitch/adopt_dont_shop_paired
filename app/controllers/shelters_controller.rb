@@ -48,11 +48,6 @@ class SheltersController < ApplicationController
   def show
     @shelter = Shelter.find(params[:id])
     @shelter_reviews = @shelter.shelter_reviews
-    if @shelter_reviews.length >= 1
-      @review_average = @shelter_reviews.sum {|review| review.rating} / @shelter_reviews.length
-    else
-      @review_average = @shelter_reviews.sum {|review| review.rating}
-    end
   end
 
   def destroy
