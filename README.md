@@ -8,6 +8,8 @@ Turing School of Software & Design, Back End Module 2, Weeks 2-3 Pair Project
 This project built off of Garrett's solo project repo from week 1 of Module 2, Adopt Don't Shop.
 
 ## Overview
+You can find our project ERD (here)[https://github.com/rrabinovitch/adopt_dont_shop_paired/blob/readme_update/erd.pdf].
+
 This project utilizes our recent learnings about one-to-many (`shelters`<>`pets`, `shelters`<>`shelter reviews`) and many-to-many relationships (`pets`<>`adoption applications`). As the ERD below shows, each shelter can have many pets and reviews - all of which have CRUD functionality.
 
 Additionally, adoption applications can be submitted for many pets, and each pet can have multiple applications submitted for it. Each application can be approved for any number of pets (ie, if an application is for 3 pets, it can be approved for 0, 1, 2, or 3 pets), and each approved `pet`<>`adoption application` relationship can be revoked as well.
@@ -16,9 +18,7 @@ In order to apply to adopt pets, they must first be favorited, a feature which u
 
 The deployed version of our application can be found (here)[https://lit-depths-46900.herokuapp.com/].
 
-![ERD](https://github.com/rrabinovitch/adopt_dont_shop_paired/blob/readme_update/erd.pdf)
-
-The learning goals, requirements, and user stories used as guidance for this project (as well as the previous solo project version) can be seen below.
+The learning goals, requirements, and user stories that guided our completion of this project (as well as the solo version of the project) can be found below.
 
 
 ## Learning Goals
