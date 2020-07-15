@@ -43,9 +43,6 @@ RSpec.describe Pet, type: :model do
       shelter = Shelter.create!(name: "Primary Shelter", address: "123 Maple Ave.", city: "Denver", state: "CO", zip: "80438")
       pet1 = Pet.create!(name: "Bonnie", image: "http://www.gsgsrescue.org/assets/files/dogs/2020/06/IMG_1639_1.jpg", approximate_age: "13", sex: "Female", shelter_id: shelter.id, status: "Adoptable")
       pet2 = Pet.create!(name: "George", image: "http://www.gsgsrescue.org/assets/files/dogs/2020/06/IMG_1639_1.jpg", approximate_age: "11", sex: "Male", shelter_id: shelter.id, status: "Pending")      # adoption_application1 = AdoptionApplication.create!(name: "Ruthie R", address: "1245 Turing Ave", city: "Denver", state: "CO", zip: "80250", phone_number: "253-555-1843", description: "I love animals and I want them all.")
-      # PetAdoptionApplication.create!(adoption_application_id: adoption_application1.id, pet_id: pet.id)
-      # adoption_application2 = AdoptionApplication.create!(name: "Garrett G", address: "4586 Main St", city: "Boulder", state: "CO", zip: "80345", phone_number: "554-234-1575", description: "I deserve them.")
-      # PetAdoptionApplication.create!(adoption_application_id: adoption_application2.id, pet_id: pet.id)
 
       expect(pet1.adoptable?).to eq(true)
       expect(pet2.adoptable?).to eq(false)
