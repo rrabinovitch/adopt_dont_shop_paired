@@ -6,4 +6,8 @@ class PetAdoptionApplication < ApplicationRecord
   def approved?
     status == "Approved"
   end
+
+  def pending?
+    status == "Pending"
+  end
 end
