@@ -11,6 +11,8 @@
     <li><%= pet.name %></li>
     <% if pet.adoptable? %>
       <%= button_to "Approve application for #{pet.name}", "/pets/#{pet.id}/adoption_applications/#{@adoption_application.id}", method: :patch %>
+    <% elsif # if the PetAdoptionApplication.where(adoption_application_id = @adoption_application.id && pet_id = pet.id) has a status that is approved then show the revoke app button %>
+      <%= button_to "Revoke application for #{pet.name}" *** %>
     <% else %>
       <p><%= pet.name %>'s adoption is pending.</p>
     <% end %>
