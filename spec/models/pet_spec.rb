@@ -38,6 +38,24 @@ RSpec.describe Pet, type: :model do
       expected = [test_pet1, test_pet3, test_pet2]
       expect(Pet.sort_by_status).to eq(expected)
     end
+    
+    it ".has_application" do
+      shelter = Shelter.create(name: "Best Shelter", address: "743 Mountain Drive", city: "Golden", state: "CO", zip: "80433")
+      adoption_application = AdoptionApplication.create!(name: "Ruthie R", address: "1245 Turing Ave", city: "Denver", state: "CO", zip: "80250", phone_number: "253-555-1843", description: "I love animals and I want them all.")
+      PetAdoptionApplication.create!(adoption_application_id: adoption_application.id, pet_id: pet.id)
+      
+      pet = Pet.create(
+                image: "http://www.gsgsrescue.org/assets/files/dogs/2020/06/IMG_1639_1.jpg",
+                name: "Bella",
+                approximate_age: "13",
+                sex: "Female",
+                shelter_id: shelter.id,
+                status: "Adoptable"
+                )
+      
+      pets = Pet.has_application
+      applications_array = pets.map {|pet| pet.name}
+      expect(applicatins_array).to eq("#{pet.name}")
 
     it "#adoptable?" do
       shelter = Shelter.create!(name: "Primary Shelter", address: "123 Maple Ave.", city: "Denver", state: "CO", zip: "80438")
