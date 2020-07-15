@@ -8,7 +8,7 @@ class PetAdoptionApplicationsController < ApplicationController
   def update
     pet_adoption_application = PetAdoptionApplication.find(params[:pet_adoption_application_id])
     pet = Pet.find(params[:pet_id])
-    # binding.pry
+
     if pet_adoption_application.status == "Pending"
       pet_adoption_application.update(status: "Approved")
       pet.update(status: "Pending")
