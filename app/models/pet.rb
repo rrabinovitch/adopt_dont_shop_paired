@@ -2,7 +2,7 @@ class Pet < ApplicationRecord
   attr_reader :has_application
 
   belongs_to :shelter
-  has_many :pet_adoption_applications
+  has_many :pet_adoption_applications, dependent: :delete_all
   has_many :adoption_applications, through: :pet_adoption_applications
 
   def self.sort_by_status
