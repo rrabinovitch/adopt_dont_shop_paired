@@ -29,14 +29,12 @@ RSpec.describe "Application approval", type: :feature do
     visit "/adoption_applications/#{adoption_application.id}"
 
     click_on "Approve application for #{pet1.name}"
-    # save_and_open_page
+  
     expect(page).to have_content("Adoption Status: Pending")
-    expect(page).to have_content("On hold for #{adoption_application.name}")
 
     visit "/adoption_applications/#{adoption_application.id}"
     click_on "Approve application for #{pet2.name}"
     expect(page).to have_content("Adoption Status: Pending")
-    expect(page).to have_content("On hold for #{adoption_application.name}")
   end
 
   it "Only one application can be approved for each pet but other applications remain on file" do

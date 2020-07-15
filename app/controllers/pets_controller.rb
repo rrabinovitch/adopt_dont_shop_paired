@@ -10,8 +10,9 @@ class PetsController < ApplicationController
     else
       @favorites = []
     end
-    @adoption_application = @pet.adoption_applications[0]
-    # should probably use a join b/w pets <> adoption applications where pets.id = @pet.id & pets.status = pending
+    # pet_adoption_application = PetAdoptionApplication.find_by(pet_id: @pet.id, status: "Approved")
+    # adoption_application = AdoptionApplication.find(pet_adoption_application.adoption_application_id)
+    # @applicant_name = adoption_application.name
   end
 
   def new
@@ -24,7 +25,7 @@ class PetsController < ApplicationController
 
   def update
     pet = Pet.find(params[:id])
-    
+
     missing_fields = pet_params.select{|_,user_input| user_input.nil? || user_input == ""}.keys
     if missing_fields.empty?
       pet.update(pet_params)

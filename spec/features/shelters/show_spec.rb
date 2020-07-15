@@ -30,7 +30,7 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content("#{shelter_review.content}")
     expect(page).to have_xpath("//img[@src='#{shelter_review.picture}']")
   end
-  
+
   it "when I visit '/shelters/:id' I see available pet quantity, average review rating and number of applications on file" do
     test_shelter = Shelter.create!(name: "Test Shelter", address: "114 Test Address", city: "Test City", state: "CO", zip: "80202")
     shelter_review_1 = ShelterReview.create!(title: "Okay shelter!", rating: 2, content: "Too many sad dogs.", picture: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2019%2F01%2Fpuppies.jpg", shelter_id: test_shelter.id)
@@ -46,6 +46,6 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content("Available Pets: 2")
     expect(page).to have_content("Average Review Rating: 3")
     expect(page).to have_content("Number of Applications on File: 2")
-    
+
   end
 end
