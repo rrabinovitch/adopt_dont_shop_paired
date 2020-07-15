@@ -3,7 +3,7 @@
 <hr/>
 <p><%= link_to "Pets Page", "/shelters/#{@shelter.id}/pets" %></p>
 <p>Available Pets: <%= @shelter.pets.count %></p>
-<p>Average Review Rating: <%= @review_average %> </p>
+<p>Average Review Rating: <%= ShelterReview.average(@shelter_reviews) %> </p>
 <p>Number of Applications on File: <%=@shelter.applications_total%> </p>
 <p>Address: <%= @shelter.address %></p>
 <p>City: <%= @shelter.city %></p>
