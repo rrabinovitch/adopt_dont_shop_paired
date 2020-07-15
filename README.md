@@ -8,7 +8,7 @@ Turing School of Software & Design, Back End Module 2, Weeks 2-3 Pair Project
 This project built off of Garrett's solo project repo from week 1 of Module 2, Adopt Don't Shop.
 
 ## Overview
-You can find our project ERD (here)[https://github.com/rrabinovitch/adopt_dont_shop_paired/blob/readme_update/erd.pdf].
+Our project ERD can be seen (here)[https://github.com/rrabinovitch/adopt_dont_shop_paired/blob/readme_update/erd.pdf] for a visual representation of the relationships between our database resources.
 
 This project utilizes our recent learnings about one-to-many (`shelters`<>`pets`, `shelters`<>`shelter reviews`) and many-to-many relationships (`pets`<>`adoption applications`). As the ERD below shows, each shelter can have many pets and reviews - all of which have CRUD functionality.
 
