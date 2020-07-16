@@ -42,7 +42,7 @@ RSpec.describe "As a visitor", type: :feature do
       click_link "Edit"
       expect(current_path).to eq("/shelters/#{shelter.id}/edit")
   end
-  
+
   it "When editing a shelter it tells me if I missed an input field" do
     test_shelter = Shelter.create!(name: "Test Shelter", address: "114 Test Address", city: "Test City", state: "CO", zip: "80202")
     visit "/shelters/#{test_shelter.id}"
@@ -63,7 +63,7 @@ RSpec.describe "As a visitor", type: :feature do
 
     expect(page).to have_content('Unsuccessful shelter submission, please fill in the following fields prior to submission: ["address", "city", "state", "zip"]')
 
-    
+
   end
 
 end

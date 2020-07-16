@@ -20,4 +20,10 @@ class Pet < ApplicationRecord
   def pending?
     status == "Pending"
   end
+
+  def applicant_name
+    pet_adoption_application = PetAdoptionApplication.find_by(pet_id: id, status: "Approved")
+    adoption_application = AdoptionApplication.find(pet_adoption_application.adoption_application_id)
+    adoption_application.name
+  end
 end

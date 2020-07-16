@@ -10,9 +10,6 @@ class PetsController < ApplicationController
     else
       @favorites = []
     end
-    # pet_adoption_application = PetAdoptionApplication.find_by(pet_id: @pet.id, status: "Approved")
-    # adoption_application = AdoptionApplication.find(pet_adoption_application.adoption_application_id)
-    # @applicant_name = adoption_application.name
   end
 
   def new
@@ -31,7 +28,7 @@ class PetsController < ApplicationController
       pet.update(pet_params)
       redirect_to "/pets/#{params[:id]}"
     else
-      flash[:notice] = "Unsuccessful shelter submission, please fill in the following fields prior to submission: #{missing_fields.each { |field| p "#{field} "}}"
+      flash[:notice] = "Unsuccessful shelter submission, please fill in the following fields prior to submission: #{missing_fields.each { |field| "#{field} "}}"
       redirect_to "/pets/#{params[:id]}/edit"
     end
 
